@@ -1,0 +1,3 @@
+FLASK_APP=main.py
+FLASK_RUN_PORT=8080
+APP_CONFIG_FILE=app/config.py
