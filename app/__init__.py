@@ -4,11 +4,12 @@ from flask_jwt_extended import JWTManager
 from flask_restful import abort
 
 from app.config import config
-from app.routes import v1_bp
+from app.routes.root import root_bp
+from app.routes.v1 import v1_bp
+
 
 class CustomJSONProvider(DefaultJSONProvider):
     sort_keys = False
-
 
 jwt = JWTManager()
 
@@ -19,7 +20,10 @@ def create_app():
     jwt.init_app(app)
 
     app.register_blueprint(v1_bp)
+    app.register_blueprint(root_bp)
     return app
+
+
 
 @jwt.expired_token_loader
 def expired_token_callback(jwt_header, jwt_payload):
