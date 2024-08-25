@@ -5,10 +5,10 @@ from datetime import datetime
 
 from werkzeug.security import check_password_hash
 
-from app.models import User, PrepaidAccountTransaction, Transaction
-from app.services import database
-from app.services.product_service import load_products
-from app.services.user_services import user_collection
+from src.models import User, PrepaidAccountTransaction, Transaction
+from src.services import database
+from src.services.product_service import load_products
+from src.services.user_services import user_collection
 
 transaction_collection = database.get_collection('transaction')
 

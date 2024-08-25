@@ -2,9 +2,9 @@
 from flask import request, make_response, abort
 from flask_jwt_extended import get_jwt_identity, jwt_required
 
-from app.routes.base import BaseResources
-from app.services.user_services import get_user
-from app.services.invoice_service import request_invoice_balance, direct_update_invoice, get_invoice, get_user_invoices
+from src.routes.base import BaseResources
+from src.services.user_services import get_user
+from src.services.invoice_service import request_invoice_balance, direct_update_invoice, get_invoice, get_user_invoices
 
 
 class BalanceResource(BaseResources):
@@ -64,7 +64,7 @@ class BalanceResource(BaseResources):
                     <html>
                         <head><title>Invoice Paid!</title></head>
                         <body>
-                            <p>Thank you for your payment.</p>
+                            <p>Thank you for your payment. This is fake payment by Muhammad Utsman with Xendit Test Environment</p>
                         </body>
                     </html>
                     """

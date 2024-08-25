@@ -1,3 +1,78 @@
-site_name: ppob-fake-api
+site_name: PPOB Fake REST API
+site_url: https://utsmannn.github.io/ppob-fake-api/
+
 theme:
-   name: 'material'
+  name: 'material'
+  language: en
+  feature:
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.instant.progress
+    - content.code.copy
+    - content.code.annotate
+    - navigation.tabs
+  palette:
+    - scheme: slate
+      primary: light green
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: light green
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+plugins:
+  - search
+  - neoteroi.mkdocsoad:
+      use_pymdownx: true
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: id
+          name: Indonesia
+          build: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: /docs
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Endpoint: endpoint.md
+  - Payment Simulation: payment-simulation.md
+
+copyright: Copyright &copy; 2024 utsmannn (Muhammad Utsman)
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/utsmannn
+      name: utsmannn on Github
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/utsmannn/
+      name: utsmannn on Linkedin
+

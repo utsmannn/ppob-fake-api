@@ -1,7 +1,7 @@
 import csv
 from typing import Dict
 
-from app.models import ProductRawCsv
+from src.models import ProductRawCsv
 
 def load_products():
     products = []

@@ -1,4 +1,4 @@
-from app.routes.base import BaseResources
+from src.routes.base import BaseResources
 
 
 class Categories(BaseResources):

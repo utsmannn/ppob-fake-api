@@ -3,7 +3,7 @@ from unicodedata import category
 from flask import request, jsonify
 from flask_restful import Resource, abort
 
-from app.services.product_service import load_products
+from src.services.product_service import load_products
 
 
 class BaseResources(Resource):

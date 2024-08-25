@@ -4,8 +4,8 @@ from datetime import timedelta
 from flask_jwt_extended import create_access_token
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from app.models import User
-from app.services import database
+from src.models import User
+from src.services import database
 
 user_collection = database.get_collection('user')
 

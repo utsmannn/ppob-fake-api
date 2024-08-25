@@ -2,8 +2,8 @@ from flask import request
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_restful import abort
 
-from app.routes.base import BaseResources
-from app.services.user_services import register, get_user_dict, login
+from src.routes.base import BaseResources
+from src.services.user_services import register, get_user_dict, login
 
 
 class UserResources(BaseResources):
@@ -25,6 +25,7 @@ class UserResources(BaseResources):
             status=True,
             data=user
         )
+
 
     def register(self):
         data = request.json
@@ -60,7 +61,9 @@ class UserResources(BaseResources):
             token = login_result['token']
             return self.create_response(
                 message=message,
-                data=token,
+                data={
+                    'token': f'Bearer {token}'
+                },
                 status=True
             )
         else:

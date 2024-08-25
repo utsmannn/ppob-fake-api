@@ -3,10 +3,10 @@ from __future__ import annotations
 import os
 import uuid
 
-from app.models import BalanceTopUpInvoice
-from app.services import database
-from app.services.http_client_service import HttpClientService
-from app.services.user_services import user_collection, get_user
+from src.models import BalanceTopUpInvoice
+from src.services import database
+from src.services.http_client_service import HttpClientService
+from src.services.user_services import user_collection, get_user
 
 http_client = HttpClientService()
 invoice_collection = database.get_collection('invoice')

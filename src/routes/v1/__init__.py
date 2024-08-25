@@ -2,12 +2,12 @@ from flask import Blueprint, url_for
 from flask_restful import Api
 from werkzeug.utils import redirect
 
-from app.routes.v1.balances import BalanceResource
-from app.routes.v1.categories import Categories
-from app.routes.v1.documentations import DocumentationResources
-from app.routes.v1.products import ProductResources
-from app.routes.v1.transactions import TransactionResources
-from app.routes.v1.users import UserResources
+from src.routes.v1.balances import BalanceResource
+from src.routes.v1.categories import Categories
+from src.routes.v1.documentations import DocumentationResources
+from src.routes.v1.products import ProductResources
+from src.routes.v1.transactions import TransactionResources
+from src.routes.v1.users import UserResources
 
 v1_bp = Blueprint('v1', __name__, url_prefix='/api/v1')
 api_v1 = Api(v1_bp)
@@ -42,4 +42,20 @@ api_v1.add_resource(
     '/transaction/<transaction_id>',
     strict_slashes=False
 )
-api_v1.add_resource(DocumentationResources, '/docs', '/assets/stylesheets/<file>', '/assets/javascripts/<file>')
+api_v1.add_resource(
+    DocumentationResources,
+    '/docs',
+    '/assets/stylesheets/<file>',
+    '/assets/javascripts/<file>',
+    '/assets/images/<file>',
+    '/assets/javascripts/workers/<file>',
+    '/search/<file>',
+    '/docs/#<file>'
+)
+
+
+def sample_register():
+    """
+    :rtype: object
+    """
+    return {}

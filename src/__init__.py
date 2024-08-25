@@ -3,9 +3,9 @@ from flask.json.provider import DefaultJSONProvider
 from flask_jwt_extended import JWTManager
 from flask_restful import abort
 
-from app.config import config
-from app.routes.root import root_bp
-from app.routes.v1 import v1_bp
+from src.config import config
+from src.routes.root import root_bp
+from src.routes.v1 import v1_bp
 
 
 class CustomJSONProvider(DefaultJSONProvider):

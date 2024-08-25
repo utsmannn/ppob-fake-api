@@ -10,6 +10,10 @@
 - [x] Cloud mongo implementation
 - [x] Balance
 - [x] Xendit implementation
-- [ ] Documentation
-- [ ] Deployment
+- [x] Documentation
+- [x] Deployment
+
+### Full documentation
+
+https://utsmannn.github.io/ppob-fake-api/
 
