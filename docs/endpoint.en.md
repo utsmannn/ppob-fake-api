@@ -8,6 +8,7 @@ Welcome to the PPOB API documentation. This API provides various endpoints to ma
 listing, balance transactions, and product transactions.
 
 Server URL:
+
 ``` { .json .copy }
 https://ppob-fake-api.fly.dev
 ```
@@ -72,9 +73,11 @@ API Version: `1.0.0`
         "phone": "string"
     }'
     ```
+
 ---
 
 ### **Register**
+
 <span style="color:#C75151">**POST**</span> **`/api/v1/register`**
 
 - **Summary:** Register new account
@@ -130,6 +133,7 @@ API Version: `1.0.0`
 ---
 
 ### **Get User Information**
+
 <span style="color:#45AA4A">**GET**</span> **`/api/v1/user`**
 
 - **Summary:** Get user information
@@ -182,6 +186,7 @@ API Version: `1.0.0`
 ## Product
 
 ### **Get All Product Postpaid**
+
 <span style="color:#45AA4A">**GET**</span> **`/api/v1/product`**
 
 - **Summary:** Get All product list of postpaid (single shot payment point without inquiry recipient)
@@ -253,9 +258,11 @@ API Version: `1.0.0`
     ``` { .shell .copy }
     curl --location --request GET 'https://ppob-fake-api.fly.dev/api/v1/product' \
     ```
+
 ---
 
 ### **Get All Product Prepaid**
+
 <span style="color:#45AA4A">**GET**</span> **`/api/v1/product/prepaid`**
 
 - **Summary:** Get All product list of prepaid (payment point with inquiry recipient account)
@@ -318,6 +325,7 @@ API Version: `1.0.0`
 ---
 
 ### Get All Category Available
+
 <span style="color:#45AA4A">**GET**</span> **`/api/v1/category`**
 
 - **Summary:** Get Product Category list
@@ -366,6 +374,7 @@ API Version: `1.0.0`
 ## Balance Transaction
 
 ### **Topup Your Balance Account**
+
 <span style="color:#C75151">**POST**</span> **`/api/v1/topup_balance`**
 
 - **Summary:** Top up Balance with payment simulation by Xendit Test Environment
@@ -437,6 +446,7 @@ API Version: `1.0.0`
 ---
 
 ### **Get Topup Balance History**
+
 <span style="color:#45AA4A">**GET**</span> **`/api/v1/balance_invoice`**
 
 - **Summary:** Get all topup balance history of your account
@@ -496,9 +506,11 @@ API Version: `1.0.0`
 ## Product Transaction
 
 ### **Request New Transaction**
+
 <span style="color:#C75151">**POST**</span> **`/api/v1/transaction`**
 
-- **Summary:** Preliminary step that validates and prepares the transaction details before the actual execution, ensuring all conditions are met before processing.
+- **Summary:** Preliminary step that validates and prepares the transaction details before the actual execution,
+  ensuring all conditions are met before processing.
 - **Tags:** Product Transaction
 
 ???+ "Content Example"
@@ -539,6 +551,7 @@ API Version: `1.0.0`
         | status           | string  | Yes      | Status of the transaction         |
         | recipient_number | string  | Yes      | Recipient's number                |
         | prepaid_account  | object  | Yes      | Prepaid account information       |
+        | merchant_account  | object  | No      | Merchant account information, only from QRIS      |
         | description      | string  | Yes      | Description of the transaction    |
     
         ``` { .json .copy }
@@ -556,6 +569,93 @@ API Version: `1.0.0`
             "prepaid_account": {
               "name": "John Doe",
               "number": "1234567890"
+            },
+            "merchant_account": null,
+            "description": "Pulsa Telkomsel 10K"
+          }
+        }
+        ```
+
+??? example "Request Example"
+
+    ``` { .shell .copy }
+    curl --location --request POST 'https://ppob-fake-api.fly.dev/api/v1/transaction' \
+    --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNDQ4NDI1NSwianRpIjoiMWQ0NmIyZjItZTVmNS00ZjE1LThiZjUtOWRjNDYzOTlhNmI2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImU2YzAyZDFmLWRiOGItNGM4NS1iNjdjLWVmMDYzYzlkOGViMiIsIm5iZiI6MTcyNDQ4NDI1NSwiY3NyZiI6IjIwMzJhYTVjLWMyZDgtNGM2Mi1hNWQxLWQ0Nzk5M2FiNTA0ZSIsImV4cCI6MTcyNDU3MDY1NX0.4NlV9KSzceHFPstFTr073Lo5V5i4_1q1KNBnkLYDFaI' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "product_code": "string",
+        "recipient_number": "string"
+    }'
+    ```
+
+---
+
+### **Request New QRIS Transaction**
+
+<span style="color:#C75151">**POST**</span> **`/api/v1/transaction/qris`**
+
+- **Summary:** Using QRIS for preliminary step that validates and prepares the transaction details before the actual
+  execution, ensuring all conditions are met before processing.
+- **Tags:** Product Transaction
+
+???+ "Content Example"
+
+    === "Header Parameter"
+    
+        | Name          | In     | Type   | Required | Description                    |
+        |---------------|--------|--------|----------|--------------------------------|
+        | Authorization | header | string | Yes       | Bearer token for authorization |
+    
+    === "Request Body"
+    
+        | Name             | Type   | Required | Description         |
+        |------------------|--------|----------|---------------------|
+        | content     | string | Yes      | Content of QRIS |
+        | amount | string | No      | Amount you needed, if amount include in QRIS, you no need this  |
+    
+        ``` { .json .copy }
+        {
+          "content": "00020101021126550016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE51440014ID.CO.QRIS.WWW0215ID20190022915550303UBE5204839853033605802ID5906Baznas6013Jakarta Pusat61051034062070703A016304A402",
+          "amount": "20000"
+        }
+        
+        ```
+    
+    === "Response"
+    
+        | Name             | Type    | Required | Description                       |
+        |------------------|---------|----------|-----------------------------------|
+        | message          | string  | Yes      | Response message                  |
+        | status           | boolean | Yes      | Status of the transaction request |
+        | data             | object  | Yes      | Transaction data                  |
+        | id               | string  | Yes      | Transaction ID                    |
+        | product_code     | string  | Yes      | Product code                      |
+        | user_id          | string  | Yes      | User ID                           |
+        | amount           | integer | Yes      | Amount of the transaction         |
+        | date             | string  | Yes      | Transaction date                  |
+        | status           | string  | Yes      | Status of the transaction         |
+        | recipient_number | string  | No      | Recipient's number                |
+        | prepaid_account  | object  | No      | Prepaid account information       |
+        | merchant_account  | object  | Yes      | Merchant account information, only from QRIS      |
+        | description      | string  | Yes      | Description of the transaction    |
+    
+        ``` { .json .copy }
+        {
+          "message": "Transaction requested successfully",
+          "status": true,
+          "data": {
+            "id": "transaction_id",
+            "product_code": "QRIS",
+            "user_id": "user_id",
+            "amount": 20000,
+            "date": "2024-08-24T10:00:00Z",
+            "status": "PENDING",
+            "recipient_number": null,
+            "prepaid_account": null,
+            "merchant_account": {
+              "id": "ID2019002291555",
+              "name": "Baznas",
+              "city": "Jakarta Pusat"
             },
             "description": "Pulsa Telkomsel 10K"
           }
@@ -577,6 +677,7 @@ API Version: `1.0.0`
 ---
 
 ### **Execute Transaction**
+
 <span style="color:#C75151">**POST**</span> **`/api/v1/transaction/execute`**
 
 - **Summary:** After you created the transaction, you must execute with your password and impacted to your balance
@@ -619,6 +720,7 @@ API Version: `1.0.0`
         | status           | string  | Yes      | Status of the transaction                   |
         | recipient_number | string  | Yes      | Recipient's number                          |
         | prepaid_account  | object  | No       | Prepaid account information (if applicable) |
+        | merchant_account  | object  | No      | Merchant account information, only from QRIS      |
         | description      | string  | Yes      | Description of the transaction              |
     
         ``` { .json .copy }
@@ -657,6 +759,7 @@ API Version: `1.0.0`
 ---
 
 ### **Get All History Transaction**
+
 <span style="color:#45AA4A">**GET**</span> **`/api/v1/transaction`**
 
 - **Summary:** Get all transaction history
@@ -683,8 +786,9 @@ API Version: `1.0.0`
         | amount           | integer | Yes      | Amount of the transaction                   |
         | date             | string  | Yes      | Transaction date                            |
         | status           | string  | Yes      | Status of the transaction                   |
-        | recipient_number | string  | Yes      | Recipient's number                          |
+        | recipient_number | string  | No      | Recipient's number                          |
         | prepaid_account  | object  | No       | Prepaid account information (if applicable) |
+        | merchant_account  | object  | No      | Merchant account information, only from QRIS      |
         | description      | string  | Yes      | Description of the transaction              |
 
 ??? example "Request Example"

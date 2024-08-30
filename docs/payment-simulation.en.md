@@ -29,7 +29,7 @@ complete the simulation:
     After initiating a top-up request (`POST /api/v1/topup_balance`), the response will include an invoice_url.
     The user must go to the provided `invoice_url` to simulate the payment process.
 
-    ![img1.png](https://i.ibb.co.com/JrtQ9xP/img1.png)
+    ![SCR-20240830-uizn.png](images/SCR-20240830-uizn.png)
 
 === "Simulate the Payment"
 
@@ -37,7 +37,7 @@ complete the simulation:
     After the simulated payment is completed, the page will redirect to a blank page with the message "Thank you for your
     payment".
 
-    ![img3.png](https://i.ibb.co.com/BzKKzzG/img3.png)
+   ![SCR-20240830-ujbl.png](images/SCR-20240830-ujbl.png)
 
 === "Check Account Balance and Invoice Status"
 

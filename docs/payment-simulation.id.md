@@ -27,7 +27,7 @@ dibuat ke gateway pembayaran.
     Setelah memulai permintaan top-up (`POST /api/v1/topup_balance`), respons akan menyertakan invoice_url.
     Pengguna harus mengunjungi `invoice_url` yang diberikan untuk mensimulasikan proses pembayaran.
 
-    ![img1.png](https://i.ibb.co.com/JrtQ9xP/img1.png)
+    ![SCR-20240830-uizn.png](images/SCR-20240830-uizn.png)
 
 === "Simulasikan Pembayaran"
 
@@ -35,7 +35,7 @@ dibuat ke gateway pembayaran.
     Setelah pembayaran simulasi selesai, halaman akan mengarahkan ke halaman kosong dengan pesan "Thank you for your
     payment".
 
-    ![img3.png](https://i.ibb.co.com/BzKKzzG/img3.png)
+     ![SCR-20240830-ujbl.png](images/SCR-20240830-ujbl.png)
 
 === "Periksa Saldo Akun dan Status Invoice"
 

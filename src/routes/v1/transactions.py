@@ -2,8 +2,9 @@ from flask import request
 from flask_jwt_extended import get_jwt_identity, jwt_required
 
 from src.routes.base import BaseResources
+from src.services.qris_service import parse_qris
 from src.services.transaction_service import inquiry_transaction, get_transaction, get_all_transaction, \
-    execute_transaction
+    execute_transaction, inquiry_qris_transaction
 from src.services.user_services import get_user, get_user_with_password
 
 
@@ -16,6 +17,8 @@ class TransactionResources(BaseResources):
 
         if path == '/transaction':
             return self.inquiry_transaction(user_id)
+        elif path == '/transaction/qris':
+            return self.inquiry_qris_transaction(user_id)
         elif path == '/transaction/execute':
             return self.execute_transaction(user_id)
         else:
@@ -45,6 +48,50 @@ class TransactionResources(BaseResources):
             status=True,
             data=transaction.to_bson_dict()
         )
+
+    def inquiry_qris_transaction(self, user_id):
+        external_amount=None
+
+        data = request.json
+        if data is None:
+            self.abort_response(500, 'Body empty!')
+
+        required_fields = ['content']
+        for field in required_fields:
+            if field not in data:
+                return self.abort_response(400, f'Missing field: {field}')
+
+        qris_content = data['content']
+        qris_data = parse_qris(qris_content)
+
+        if qris_data is None:
+            return {
+                'status': False,
+                'message': f'Cannot request transaction, QRIS invalid!'
+            }
+
+        if qris_data.amount == '':
+            if 'amount' in data:
+                external_amount = data['amount']
+            else:
+                self.abort_response(500, 'Amount empty on qris, please add `amount` in body')
+        else:
+            external_amount = qris_data.amount
+
+        user = get_user(user_id)
+
+        transaction = inquiry_qris_transaction(qris_data, user, external_amount)
+
+        if transaction is None:
+            self.abort_response(404, 'Product not found')
+
+        return self.create_response(
+            message='Transaction created successful',
+            status=True,
+            data=transaction.to_bson_dict()
+        )
+
+
 
     def execute_transaction(self, user_id):
         data = request.json

@@ -1,13 +1,14 @@
-import json
 import random
 import uuid
 from datetime import datetime
 
+from mergedeep import merge
 from werkzeug.security import check_password_hash
 
-from src.models import User, PrepaidAccountTransaction, Transaction
+from src.models import User, PrepaidAccountTransaction, Transaction, MerchantAccount
 from src.services import database
 from src.services.product_service import load_products
+from src.services.qris_service import parse_qris, QrisData
 from src.services.user_services import user_collection
 
 transaction_collection = database.get_collection('transaction')
@@ -31,6 +32,19 @@ def create_transaction_from_bson(bson_transaction):
     else:
         prepaid_account = None
 
+    if 'merchant_account' in bson_transaction:
+        merchant_account_bson = bson_transaction['merchant_account']
+        if merchant_account_bson is None:
+            merchant_account = None
+        else:
+            merchant_account = MerchantAccount(
+                name=merchant_account_bson['name'],
+                city=merchant_account_bson['city'],
+                merchant_id=merchant_account_bson['id']
+            )
+    else:
+        merchant_account = None
+
     transaction = Transaction(
         _id=bson_transaction['id'],
         product_code=bson_transaction['product_code'],
@@ -40,6 +54,7 @@ def create_transaction_from_bson(bson_transaction):
         status=bson_transaction['status'],
         recipient_number=bson_transaction['recipient_number'],
         prepaid_account=prepaid_account,
+        merchant_account=merchant_account,
         description=bson_transaction['description']
     )
     return transaction
@@ -91,6 +106,7 @@ def inquiry_transaction(product_code, user: User, recipient_number):
         status=status,
         recipient_number=_recipient_number,
         prepaid_account=prepaid_account,
+        merchant_account=None,
         description=description
     )
 
@@ -104,6 +120,51 @@ def inquiry_transaction(product_code, user: User, recipient_number):
         )
 
     return transaction
+
+def inquiry_qris_transaction(qris_data: QrisData, user: User, external_amount):
+    merchant_id = qris_data.merchant_account_2.merchant_id
+    merchant_account = MerchantAccount(
+        name=qris_data.merchant_name,
+        city=qris_data.merchant_city,
+        merchant_id=merchant_id
+    )
+
+    date_now = datetime.utcnow()
+    date_formatted = date_now.isoformat(timespec='milliseconds') + 'Z'
+    amount = float(f'{external_amount}')
+
+    transaction_id = f'{uuid.uuid4()}'.split('-')[-1]
+    if float(f'{user.balance}') > float(f'{amount}'):
+        status = 'PENDING'
+    else:
+        status = 'FAILED'
+
+    description = f'{qris_data.merchant_name}, {qris_data.merchant_city}'
+
+    transaction = Transaction(
+        _id=transaction_id,
+        product_code='QRIS',
+        user_id=user.id,
+        amount=int(amount),
+        date=date_formatted,
+        status=status,
+        recipient_number=None,
+        prepaid_account=None,
+        description=description,
+        merchant_account=merchant_account
+    )
+
+    transaction_collection.insert_one(transaction.to_bson_dict())
+
+    if status == 'SUCCESS':
+        updated_balance = int(float(user.balance)) - int(float(amount))
+        user_collection.update_one(
+            {'id': user.id}, {'$set': {'balance': updated_balance}},
+            upsert=True
+        )
+
+    return transaction
+
 
 def execute_transaction(transaction_id, user: User, password):
     transaction = get_transaction(transaction_id)
@@ -156,6 +217,7 @@ def get_transaction(transaction_id):
 
     transaction = create_transaction_from_bson(transaction_bson)
     return transaction
+
 
 def get_all_transaction(user_id):
     transactions_bson = transaction_collection.find({'user_id': user_id})

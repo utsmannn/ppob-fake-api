@@ -1,5 +1,8 @@
 __all__ = ['ProductRawCsv', 'User', 'BalanceTopUpInvoice', 'Transaction', 'PrepaidAccountTransaction']
 
+from dataclasses import asdict, dataclass
+from typing import Optional
+
 
 class ProductRawCsv:
     def __init__(self, _id, code, name, category, sub_category, description, nominal_min, nominal_max, admin_fee,
@@ -108,9 +111,24 @@ class PrepaidAccountTransaction:
         }
 
 
+class MerchantAccount:
+    def __init__(self, name, city, merchant_id):
+        self.name = name
+        self.city = city,
+        self.merchant_id = merchant_id
+
+    def to_bson_dict(self):
+        return {
+            'id': self.merchant_id,
+            'name': self.name,
+            'city': self.city[0]
+        }
+
+
 class Transaction:
     def __init__(self, _id, product_code, user_id, amount, date, status, recipient_number,
-                 prepaid_account: PrepaidAccountTransaction, description):
+                 prepaid_account: Optional[PrepaidAccountTransaction], merchant_account: Optional[MerchantAccount],
+                 description):
         self._id = _id
         self.product_code = product_code
         self.user_id = user_id
@@ -119,6 +137,7 @@ class Transaction:
         self.status = status
         self.recipient_number = recipient_number
         self.prepaid_account = prepaid_account
+        self.merchant_account = merchant_account
         self.description = description
 
     @property
@@ -126,7 +145,6 @@ class Transaction:
         return self._id
 
     def to_bson_dict(self):
-
         return {
             'id': self._id,
             'product_code': self.product_code,
@@ -136,5 +154,6 @@ class Transaction:
             'status': self.status,
             'recipient_number': self.recipient_number,
             'prepaid_account': None if self.prepaid_account is None else self.prepaid_account.to_bson_dict(),
+            'merchant_account': None if self.merchant_account is None else self.merchant_account.to_bson_dict(),
             'description': self.description
         }

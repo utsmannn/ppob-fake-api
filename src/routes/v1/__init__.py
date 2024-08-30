@@ -39,6 +39,7 @@ api_v1.add_resource(
     TransactionResources,
     '/transaction',
     '/transaction/execute',
+    '/transaction/qris',
     '/transaction/<transaction_id>',
     strict_slashes=False
 )
