@@ -485,13 +485,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#langkah-langkah-parsing" class="md-nav__link">
+  <a href="#parsing" class="md-nav__link">
     <span class="md-ellipsis">
-      Langkah-langkah Parsing
+      Parsing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Langkah-langkah Parsing">
+    <nav class="md-nav" aria-label="Parsing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -868,13 +868,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#langkah-langkah-parsing" class="md-nav__link">
+  <a href="#parsing" class="md-nav__link">
     <span class="md-ellipsis">
-      Langkah-langkah Parsing
+      Parsing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Langkah-langkah Parsing">
+    <nav class="md-nav" aria-label="Parsing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1238,7 +1238,19 @@ Berikut adalah struktur umum QRIS dan penjelasan dari masing-masing elemennya:</
    mengambil data yang sesuai. Data kemudian dapat diproses lebih lanjut atau ditampilkan sesuai kebutuhan.</p>
 </li>
 </ol>
-<h2 id="langkah-langkah-parsing">Langkah-langkah Parsing<a class="headerlink" href="#langkah-langkah-parsing" title="Permanent link">&para;</a></h2>
+<h2 id="parsing">Parsing<a class="headerlink" href="#parsing" title="Permanent link">&para;</a></h2>
+<p>Memparsing kode QR dari QRIS melibatkan ekstraksi dan interpretasi data yang terenkode untuk mendapatkan informasi yang
+bermakna. Proses ini dimulai dengan membaca string kode QR dan memecahnya menjadi segmen-segmen. Setiap segmen biasanya
+terdiri dari pengidentifikasi, panjang, dan nilai.</p>
+<p>Sebagai contoh, dua karakter pertama mewakili pengidentifikasi (misalnya, "00" untuk format indikator), diikuti oleh dua
+karakter yang mendefinisikan panjang nilai, dan kemudian nilai itu sendiri. Pola ini diulangi di seluruh string QR.</p>
+<p>Beberapa segmen mengandung data yang nested, seperti informasi akun merchant, yang memerlukan pemrosesan lebih lanjut.
+Dalam kasus ini, nilai segmen dipecah kembali menjadi sub-identifikasi, panjang, dan nilai.</p>
+<p>Setelah semua segmen diparsing, nilainya dipetakan ke atribut spesifik dalam struktur data. Struktur
+ini mungkin mencakup bidang seperti nama merchant, kota, jumlah, dan informasi tambahan.</p>
+<p>Akhirnya, data yang diparsing divalidasi dengan memeriksa bidang tertentu, seperti memverifikasi penyedia QRIS. Jika
+data valid, maka dapat digunakan untuk memproses pembayaran atau tindakan terkait lainnya. Pendekatan terstruktur ini
+memastikan bahwa semua informasi yang diperlukan diekstraksi dan diinterpretasikan dengan benar.</p>
 <h3 id="pseudo-code-explanation">Pseudo Code Explanation<a class="headerlink" href="#pseudo-code-explanation" title="Permanent link">&para;</a></h3>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">function</span><span class="w"> </span>qris_processor<span class="o">(</span>result:<span class="w"> </span>dict<span class="o">)</span><span class="w"> </span>-&gt;<span class="w"> </span>QrisData:
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>initialize<span class="w"> </span>qris_data<span class="w"> </span>as<span class="w"> </span>new<span class="w"> </span>QrisData<span class="w"> </span>object

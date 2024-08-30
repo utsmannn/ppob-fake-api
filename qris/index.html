@@ -485,13 +485,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parsing-step" class="md-nav__link">
+  <a href="#parsing" class="md-nav__link">
     <span class="md-ellipsis">
-      Parsing Step
+      Parsing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Parsing Step">
+    <nav class="md-nav" aria-label="Parsing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -868,13 +868,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parsing-step" class="md-nav__link">
+  <a href="#parsing" class="md-nav__link">
     <span class="md-ellipsis">
-      Parsing Step
+      Parsing
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Parsing Step">
+    <nav class="md-nav" aria-label="Parsing">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1085,7 +1085,7 @@
 
   <h1>QRIS Information</h1>
 
-<p>Before you make a transaction using QRIS on the <span style="color:#C75151"><strong>POST</strong></span> <strong><code>/api/v1/transaction/qris</code></strong> 
+<p>Before you make a transaction using QRIS on the <span style="color:#C75151"><strong>POST</strong></span> <strong><code>/api/v1/transaction/qris</code></strong>
 endpoint,
 Maybe you need to translate the QRIS code into information to be displayed in your application. That's what I'm for
 provides a dedicated endpoint and is independent of versioning <code>/api/v1/</code>.</p>
@@ -1237,7 +1237,20 @@ general QRIS structure and the explanation of each element:</p>
    corresponding data. The data can then be further processed or displayed as needed.</p>
 </li>
 </ol>
-<h2 id="parsing-step">Parsing Step<a class="headerlink" href="#parsing-step" title="Permanent link">&para;</a></h2>
+<h2 id="parsing">Parsing<a class="headerlink" href="#parsing" title="Permanent link">&para;</a></h2>
+<p>Parsing a QR code from QRIS involves extracting and interpreting the encoded data to retrieve meaningful information.
+The process begins by reading the QR code string and breaking it down into segments. Each segment typically consists of
+an identifier, length, and value.</p>
+<p>For example, the first two characters represent the identifier (e.g., "00" for format indicator), followed by two
+characters that define the length of the value, and then the actual value itself. This pattern is repeated throughout
+the entire QR string.</p>
+<p>Some segments contain nested data, such as merchant account information, which requires further parsing. In these cases,
+the value of the segment is broken down similarly into sub-identifiers, lengths, and values.</p>
+<p>Once all segments are parsed, the values are mapped to specific attributes in a data structure. This
+structure might include fields like merchant name, city, amount, and additional information.</p>
+<p>Finally, the parsed data is validated by checking specific fields, such as verifying the QRIS provider. If the data is
+valid, it can then be used for processing payments or other relevant actions. This structured approach ensures that all
+necessary information is correctly extracted and interpreted.</p>
 <h3 id="pseudo-code-explanation">Pseudo Code Explanation<a class="headerlink" href="#pseudo-code-explanation" title="Permanent link">&para;</a></h3>
 <div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">function</span><span class="w"> </span>qris_processor<span class="o">(</span>result:<span class="w"> </span>dict<span class="o">)</span><span class="w"> </span>-&gt;<span class="w"> </span>QrisData:
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>initialize<span class="w"> </span>qris_data<span class="w"> </span>as<span class="w"> </span>new<span class="w"> </span>QrisData<span class="w"> </span>object
@@ -1319,9 +1332,9 @@ general QRIS structure and the explanation of each element:</p>
 </span></code></pre></div>
 <h3 id="qris-example">QRIS Example:<a class="headerlink" href="#qris-example" title="Permanent link">&para;</a></h3>
 <p>Here's a step-by-step explanation for processing the given QRIS code:</p>
-<p>Given QRIS input:
+<p>Given QRIS input:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>00020101021126550016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE51440014ID.CO.QRIS.WWW0215ID20190022915550303UBE5204839853033605802ID5906Baznas6013Jakarta Pusat61051034062070703A016304A402
-</span></code></pre></div></p>
+</span></code></pre></div>
 <h3 id="1-start-with-parse_qris">1. Start with <code>parse_qris</code>:<a class="headerlink" href="#1-start-with-parse_qris" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Index</strong> starts at <code>0</code>.</li>
@@ -1373,7 +1386,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>nqi_length</strong>: <code>16</code></li>
 <li><strong>nqi_value</strong>: <code>ID.CO.SHOPEE.WWW</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26": "0016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE", "26-00": "ID.CO.SHOPEE.WWW"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26": "0016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE", "26-00": "ID.CO.SHOPEE.WWW"}</code></p>
 </li>
 <li>
 <p><strong>nqi</strong>: <code>01</code></p>
@@ -1396,7 +1410,8 @@ general QRIS structure and the explanation of each element:</p>
 </li>
 <li><strong>nqi_length</strong>: <code>03</code></li>
 <li><strong>nqi_value</strong>: <code>UBE</code></li>
-<li><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE"}</code></li>
+<li><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE"}</code></li>
 </ul>
 <h4 id="iteration-4">Iteration 4:<a class="headerlink" href="#iteration-4" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1405,7 +1420,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>44</code></li>
 <li><strong>qr_id_value</strong>: <code>0014ID.CO.QRIS.WWW0215ID20190022915550303UBE</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51": "0014ID.CO.QRIS.WWW0215ID20190022915550303UBE"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51": "0014ID.CO.QRIS.WWW0215ID20190022915550303UBE"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>117</code>.</p>
@@ -1417,7 +1433,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>nqi_length</strong>: <code>14</code></li>
 <li><strong>nqi_value</strong>: <code>ID.CO.QRIS.WWW</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW"}</code></p>
 </li>
 <li>
 <p><strong>nqi</strong>: <code>02</code></p>
@@ -1425,14 +1442,16 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>nqi_length</strong>: <code>15</code></li>
 <li><strong>nqi_value</strong>: <code>ID2019002291555</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555"}</code></p>
 </li>
 <li>
 <p><strong>nqi</strong>: <code>03</code></p>
 </li>
 <li><strong>nqi_length</strong>: <code>03</code></li>
 <li><strong>nqi_value</strong>: <code>UBE</code></li>
-<li><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE"}</code></li>
+<li><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE"}</code></li>
 </ul>
 <h4 id="iteration-5">Iteration 5:<a class="headerlink" href="#iteration-5" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1441,7 +1460,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>4</code></li>
 <li><strong>qr_id_value</strong>: <code>8398</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>127</code>.</p>
@@ -1454,7 +1474,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>3</code></li>
 <li><strong>qr_id_value</strong>: <code>360</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>134</code>.</p>
@@ -1467,7 +1488,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>2</code></li>
 <li><strong>qr_id_value</strong>: <code>ID</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>138</code>.</p>
@@ -1480,7 +1502,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>6</code></li>
 <li><strong>qr_id_value</strong>: <code>Baznas</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>148</code>.</p>
@@ -1497,7 +1520,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>13</code></li>
 <li><strong>qr_id_value</strong>: <code>Jakarta Pusat</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>165</code>.</p>
@@ -1510,7 +1534,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>5</code></li>
 <li><strong>qr_id_value</strong>: <code>10340</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>174</code>.</p>
@@ -1523,7 +1548,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>7</code></li>
 <li><strong>qr_id_value</strong>: <code>03A0163</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62": "03A0163"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62": "03A0163"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>183</code>.</p>
@@ -1536,7 +1562,8 @@ general QRIS structure and the explanation of each element:</p>
 <li><strong>qr_id_value_length</strong>: <code>4</code></li>
 <li><strong>qr_id_value</strong>: <code>A402</code></li>
 <li>
-<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62-07": "03A0163", "63": "A402"}</code></p>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62-07": "03A0163", "63": "A402"}</code></p>
 </li>
 <li>
 <p><strong>Index</strong> is now <code>191</code>, which is the end of the input string.</p>
@@ -1555,7 +1582,9 @@ general QRIS structure and the explanation of each element:</p>
 </ul>
 <h3 id="5-final-output">5. Final Output<a class="headerlink" href="#5-final-output" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Based on the example, the QRIS data is valid, and the processed <code>qris_data</code> will be returned, containing complete information such as <code>merchant_name</code> (<code>Baznas</code>), <code>merchant_city</code> (<code>Jakarta Pusat</code>), <code>amount</code>, and others according to the parsed result.</li>
+<li>Based on the example, the QRIS data is valid, and the processed <code>qris_data</code> will be returned, containing complete
+  information such as <code>merchant_name</code> (<code>Baznas</code>), <code>merchant_city</code> (<code>Jakarta Pusat</code>), <code>amount</code>, and others according to
+  the parsed result.</li>
 </ul>
 <hr />
 <h2 id="core-reference">Core reference<a class="headerlink" href="#core-reference" title="Permanent link">&para;</a></h2>
