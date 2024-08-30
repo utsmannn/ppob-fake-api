@@ -1,0 +1,1658 @@
+
+<!doctype html>
+<html lang="id" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://utsmannn.github.io/ppob-fake-api/id/qris/">
+      
+      
+        <link rel="prev" href="../payment-simulation/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>QRIS Information - PPOB Fake REST API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#endpoint-for-get-information" class="md-skip">
+          Lewati ke isi
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="PPOB Fake REST API" class="md-header__button md-logo" aria-label="PPOB Fake REST API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PPOB Fake REST API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              QRIS Information
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-green" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Pilih bahasa">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../qris/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="id" class="md-select__link">
+              Indonesia
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cari" placeholder="Cari" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cari">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Kosongkan" aria-label="Kosongkan" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Mempersiapkan pencarian
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigasi" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="PPOB Fake REST API" class="md-nav__button md-logo" aria-label="PPOB Fake REST API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    PPOB Fake REST API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endpoint/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Endpoint
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../payment-simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Payment Simulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    QRIS Information
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    QRIS Information
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Daftar isi
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-for-get-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      EndPoint for Get Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struktur-qris-untuk-parsing-dan-penjelasannya" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struktur QRIS untuk Parsing dan Penjelasannya
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struktur QRIS untuk Parsing dan Penjelasannya">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-payload-format-indicator-id-00" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Payload Format Indicator (ID 00)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-point-of-initiation-method-id-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Point of Initiation Method (ID 01)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-merchant-account-information-id-26-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Merchant Account Information (ID 26-51)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-merchant-category-code-id-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Merchant Category Code (ID 52)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-transaction-currency-id-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Transaction Currency (ID 53)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-transaction-amount-id-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Transaction Amount (ID 54)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-tip-or-convenience-fee-indicator-id-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tip or Convenience Fee Indicator (ID 55)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-country-code-id-58" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Country Code (ID 58)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-merchant-name-id-59" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Merchant Name (ID 59)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-merchant-city-id-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Merchant City (ID 60)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-postal-code-id-61" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Postal Code (ID 61)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-additional-data-field-template-id-62" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Additional Data Field Template (ID 62)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-crc-id-63" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. CRC (ID 63)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penjelasan-tambahan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Penjelasan Tambahan:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-langkah-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Langkah-langkah Parsing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Langkah-langkah Parsing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pseudo Code Explanation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contoh-qris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contoh QRIS:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-memulai-parse_qris" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Memulai parse_qris:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-memproses-qris-secara-bertahap" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Memproses QRIS secara bertahap:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Memproses QRIS secara bertahap:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 1:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 2:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 3:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 4:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 5:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 6:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 7:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 8:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 9:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 10:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 11:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 12:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memanggil-qris_processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memanggil qris_processor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-memvalidasi-qris" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memvalidasi QRIS:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hasil-akhir" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Hasil Akhir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Daftar isi">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Daftar isi
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#endpoint-for-get-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      EndPoint for Get Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struktur-qris-untuk-parsing-dan-penjelasannya" class="md-nav__link">
+    <span class="md-ellipsis">
+      Struktur QRIS untuk Parsing dan Penjelasannya
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Struktur QRIS untuk Parsing dan Penjelasannya">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-payload-format-indicator-id-00" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Payload Format Indicator (ID 00)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-point-of-initiation-method-id-01" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Point of Initiation Method (ID 01)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-merchant-account-information-id-26-51" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Merchant Account Information (ID 26-51)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-merchant-category-code-id-52" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Merchant Category Code (ID 52)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-transaction-currency-id-53" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Transaction Currency (ID 53)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-transaction-amount-id-54" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Transaction Amount (ID 54)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-tip-or-convenience-fee-indicator-id-55" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Tip or Convenience Fee Indicator (ID 55)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-country-code-id-58" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Country Code (ID 58)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-merchant-name-id-59" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Merchant Name (ID 59)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-merchant-city-id-60" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Merchant City (ID 60)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-postal-code-id-61" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Postal Code (ID 61)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-additional-data-field-template-id-62" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Additional Data Field Template (ID 62)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-crc-id-63" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. CRC (ID 63)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penjelasan-tambahan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Penjelasan Tambahan:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#langkah-langkah-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Langkah-langkah Parsing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Langkah-langkah Parsing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pseudo-code-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pseudo Code Explanation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contoh-qris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contoh QRIS:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-memulai-parse_qris" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Memulai parse_qris:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-memproses-qris-secara-bertahap" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Memproses QRIS secara bertahap:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Memproses QRIS secara bertahap:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 1:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 2:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 3:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 4:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 5:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 6:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 7:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 8:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 9:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 10:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 11:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iterasi-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iterasi 12:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-memanggil-qris_processor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Memanggil qris_processor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-memvalidasi-qris" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Memvalidasi QRIS:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hasil-akhir" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Hasil Akhir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core reference
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>QRIS Information</h1>
+
+<p>Sebelum anda melakukan transaksi menggunakan QRIS pada endpoint <span style="color:#C75151"><strong>POST</strong></span> <strong><code>/api/v1/transaction/qris</code></strong>,
+mungkin anda butuh untuk menterjemahkan code QRIS menjadi informasi untuk ditampilkan pada aplikasi anda. Untuk itu saya
+menyediakan sebuah endpoint khusus dan terlepas dari versioning <code>/api/v1/</code>.</p>
+<hr />
+<h2 id="endpoint-for-get-information">EndPoint for Get Information<a class="headerlink" href="#endpoint-for-get-information" title="Permanent link">&para;</a></h2>
+<p><span style="color:#C75151"><strong>GET</strong></span> <strong><code>/qris</code></strong></p>
+<ul>
+<li><strong>Summary:</strong> Non authentication request for parse QRIS content to data json</li>
+</ul>
+<details open="open">
+<summary>Content Example</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Response</label><label for="__tabbed_1_2">Request</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-json copy highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ok&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">&quot;raw&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00020101021126550016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE51440014ID.CO.QRIS.WWW0215ID20190022915550303UBE5204839853033605802ID5906Baznas6013Jakarta Pusat61051034062070703A016304A402&quot;</span><span class="p">,</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nt">&quot;format_indicator&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;01&quot;</span><span class="p">,</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nt">&quot;initiation_method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nt">&quot;merchant_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Baznas&quot;</span><span class="p">,</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nt">&quot;merchant_city&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jakarta Pusat&quot;</span><span class="p">,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nt">&quot;country_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID&quot;</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="nt">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10340&quot;</span><span class="p">,</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="nt">&quot;merchant_account_1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID.CO.SHOPEE.WWW&quot;</span><span class="p">,</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="nt">&quot;merchant_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;18&quot;</span><span class="p">,</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">            </span><span class="nt">&quot;merchant_pan&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;936009180000000018&quot;</span><span class="p">,</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">            </span><span class="nt">&quot;merchant_criteria&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UBE&quot;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="nt">&quot;merchant_account_2&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">            </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID.CO.QRIS.WWW&quot;</span><span class="p">,</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">            </span><span class="nt">&quot;merchant_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID2019002291555&quot;</span><span class="p">,</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">            </span><span class="nt">&quot;merchant_pan&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="nt">&quot;merchant_criteria&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;UBE&quot;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="nt">&quot;additional_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="nt">&quot;reference_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">            </span><span class="nt">&quot;terminal_label&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A01&quot;</span><span class="p">,</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="nt">&quot;payment_system_specified_template&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="nt">&quot;crc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A402&quot;</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">}</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-shell copy highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>--location<span class="w"> </span>--request<span class="w"> </span>GET<span class="w"> </span><span class="s1">&#39;https://ppob-fake-api.fly.dev/qris?content=00020101021126550016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE51440014ID.CO.QRIS.WWW0215ID20190022915550303UBE5204839853033605802ID5906Baznas6013Jakarta Pusat61051034062070703A016304A402&#39;</span><span class="w"> </span><span class="se">\</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+</details>
+<hr />
+<h2 id="struktur-qris-untuk-parsing-dan-penjelasannya">Struktur QRIS untuk Parsing dan Penjelasannya<a class="headerlink" href="#struktur-qris-untuk-parsing-dan-penjelasannya" title="Permanent link">&para;</a></h2>
+<p>QRIS (Quick Response Code Indonesian Standard) adalah standar kode QR yang digunakan di Indonesia untuk memfasilitasi
+pembayaran digital. Struktur QRIS mengikuti format EMVCo yang mencakup berbagai elemen data yang diparsing dari kode QR.
+Berikut adalah struktur umum QRIS dan penjelasan dari masing-masing elemennya:</p>
+<h3 id="1-payload-format-indicator-id-00">1. <strong>Payload Format Indicator (ID 00)</strong><a class="headerlink" href="#1-payload-format-indicator-id-00" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Dua digit</li>
+<li><strong>Deskripsi</strong>: Indikator versi format, umumnya bernilai "01" untuk QRIS.</li>
+</ul>
+<h3 id="2-point-of-initiation-method-id-01">2. <strong>Point of Initiation Method (ID 01)</strong><a class="headerlink" href="#2-point-of-initiation-method-id-01" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Dua digit</li>
+<li><strong>Deskripsi</strong>: Metode inisiasi, bernilai "11" jika QR statis (untuk transaksi banyak kali) atau "12" jika QR dinamis (
+  untuk transaksi sekali).</li>
+</ul>
+<h3 id="3-merchant-account-information-id-26-51">3. <strong>Merchant Account Information (ID 26-51)</strong><a class="headerlink" href="#3-merchant-account-information-id-26-51" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Struktur data yang terdiri dari sub-elemen</li>
+<li><strong>Deskripsi</strong>: Informasi terkait akun merchant, dapat mencakup beberapa sub-elemen, seperti:<ul>
+<li><strong>ID 00</strong>: Globally Unique Identifier (GUID) untuk merchant.</li>
+<li><strong>ID 01</strong>: Nomor ID merchant.</li>
+<li><strong>ID 02</strong>: PAN (Primary Account Number) merchant.</li>
+<li><strong>ID 03</strong>: Kriteria spesifik merchant.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-merchant-category-code-id-52">4. <strong>Merchant Category Code (ID 52)</strong><a class="headerlink" href="#4-merchant-category-code-id-52" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Empat digit</li>
+<li><strong>Deskripsi</strong>: Kode yang menunjukkan kategori bisnis merchant (e.g., 5311 untuk supermarket).</li>
+</ul>
+<h3 id="5-transaction-currency-id-53">5. <strong>Transaction Currency (ID 53)</strong><a class="headerlink" href="#5-transaction-currency-id-53" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Tiga digit</li>
+<li><strong>Deskripsi</strong>: Kode mata uang transaksi, umumnya "360" untuk IDR (Rupiah Indonesia).</li>
+</ul>
+<h3 id="6-transaction-amount-id-54">6. <strong>Transaction Amount (ID 54)</strong><a class="headerlink" href="#6-transaction-amount-id-54" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Nilai angka</li>
+<li><strong>Deskripsi</strong>: Jumlah nominal transaksi, bisa kosong jika menggunakan QR statis.</li>
+</ul>
+<h3 id="7-tip-or-convenience-fee-indicator-id-55">7. <strong>Tip or Convenience Fee Indicator (ID 55)</strong><a class="headerlink" href="#7-tip-or-convenience-fee-indicator-id-55" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Dua digit</li>
+<li><strong>Deskripsi</strong>: Indikator tip atau biaya layanan.</li>
+</ul>
+<h3 id="8-country-code-id-58">8. <strong>Country Code (ID 58)</strong><a class="headerlink" href="#8-country-code-id-58" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Dua karakter</li>
+<li><strong>Deskripsi</strong>: Kode negara, umumnya "ID" untuk Indonesia.</li>
+</ul>
+<h3 id="9-merchant-name-id-59">9. <strong>Merchant Name (ID 59)</strong><a class="headerlink" href="#9-merchant-name-id-59" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: String (alfanumerik)</li>
+<li><strong>Deskripsi</strong>: Nama merchant.</li>
+</ul>
+<h3 id="10-merchant-city-id-60">10. <strong>Merchant City (ID 60)</strong><a class="headerlink" href="#10-merchant-city-id-60" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: String (alfanumerik)</li>
+<li><strong>Deskripsi</strong>: Kota tempat merchant berada.</li>
+</ul>
+<h3 id="11-postal-code-id-61">11. <strong>Postal Code (ID 61)</strong><a class="headerlink" href="#11-postal-code-id-61" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: String (alfanumerik)</li>
+<li><strong>Deskripsi</strong>: Kode pos lokasi merchant.</li>
+</ul>
+<h3 id="12-additional-data-field-template-id-62">12. <strong>Additional Data Field Template (ID 62)</strong><a class="headerlink" href="#12-additional-data-field-template-id-62" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Struktur data yang terdiri dari sub-elemen</li>
+<li><strong>Deskripsi</strong>: Informasi tambahan yang mungkin diperlukan, seperti:<ul>
+<li><strong>ID 01</strong>: Label referensi.</li>
+<li><strong>ID 05</strong>: Label terminal.</li>
+<li><strong>ID 07</strong>: Label pengguna.</li>
+</ul>
+</li>
+</ul>
+<h3 id="13-crc-id-63">13. <strong>CRC (ID 63)</strong><a class="headerlink" href="#13-crc-id-63" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Format</strong>: Empat digit heksadesimal</li>
+<li><strong>Deskripsi</strong>: Cyclic Redundancy Check (CRC) untuk validasi integritas data.</li>
+</ul>
+<h3 id="penjelasan-tambahan">Penjelasan Tambahan:<a class="headerlink" href="#penjelasan-tambahan" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Penggunaan ID dan Sub-ID</strong>: Struktur QRIS menggunakan ID untuk menandai berbagai elemen data, dan beberapa elemen
+   seperti Merchant Account Information dan Additional Data Field Template dapat memiliki sub-ID.</p>
+</li>
+<li>
+<p><strong>Panjang Data</strong>: Setiap ID diikuti oleh dua digit yang menunjukkan panjang data dalam karakter, diikuti oleh data
+   aktual. Contohnya, <code>010211</code> berarti ID 01 (Point of Initiation Method) memiliki panjang data 02 karakter dengan
+   nilai "11".</p>
+</li>
+<li>
+<p><strong>Parsing</strong>: Untuk memparsing QRIS, prosesnya melibatkan pembacaan ID, mengekstrak panjang data, dan kemudian
+   mengambil data yang sesuai. Data kemudian dapat diproses lebih lanjut atau ditampilkan sesuai kebutuhan.</p>
+</li>
+</ol>
+<h2 id="langkah-langkah-parsing">Langkah-langkah Parsing<a class="headerlink" href="#langkah-langkah-parsing" title="Permanent link">&para;</a></h2>
+<h3 id="pseudo-code-explanation">Pseudo Code Explanation<a class="headerlink" href="#pseudo-code-explanation" title="Permanent link">&para;</a></h3>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">function</span><span class="w"> </span>qris_processor<span class="o">(</span>result:<span class="w"> </span>dict<span class="o">)</span><span class="w"> </span>-&gt;<span class="w"> </span>QrisData:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>initialize<span class="w"> </span>qris_data<span class="w"> </span>as<span class="w"> </span>new<span class="w"> </span>QrisData<span class="w"> </span>object
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>define<span class="w"> </span>mapping<span class="w"> </span>as<span class="w"> </span>dictionary<span class="w"> </span>with:
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="s2">&quot;00&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;format_indicator&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="s2">&quot;01&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;initiation_method&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="s2">&quot;54&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;amount&quot;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="s2">&quot;59&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_name&quot;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="s2">&quot;60&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_city&quot;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="s2">&quot;58&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;country_code&quot;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="s2">&quot;61&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;postal_code&quot;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="s2">&quot;26-00&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_account_1.identifier&quot;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="s2">&quot;26-01&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_account_1.merchant_pan&quot;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="s2">&quot;26-02&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_account_1.merchant_id&quot;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="s2">&quot;26-03&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_account_1.merchant_criteria&quot;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="s2">&quot;51-00&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_account_2.identifier&quot;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">        </span><span class="s2">&quot;51-01&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_account_2.merchant_pan&quot;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">        </span><span class="s2">&quot;51-02&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_account_2.merchant_id&quot;</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">        </span><span class="s2">&quot;51-03&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;merchant_account_2.merchant_criteria&quot;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="s2">&quot;62-05&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;additional_info.reference_label&quot;</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">        </span><span class="s2">&quot;62-07&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;additional_info.terminal_label&quot;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">        </span><span class="s2">&quot;62-50&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;additional_info.payment_system_specified_template&quot;</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">        </span><span class="s2">&quot;63&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s2">&quot;crc&quot;</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>key-value<span class="w"> </span>pair<span class="w"> </span><span class="o">(</span>t,<span class="w"> </span>u<span class="o">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>result:
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span>t<span class="w"> </span>exists<span class="w"> </span><span class="k">in</span><span class="w"> </span>mapping:
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">            </span>split<span class="w"> </span>the<span class="w"> </span>mapped<span class="w"> </span>attribute<span class="w"> </span>path<span class="w"> </span>into<span class="w"> </span>list<span class="w"> </span>attr_path
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">            </span><span class="nb">set</span><span class="w"> </span>target<span class="w"> </span>as<span class="w"> </span>qris_data
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>attribute<span class="w"> </span><span class="k">in</span><span class="w"> </span>attr_path<span class="w"> </span>except<span class="w"> </span>the<span class="w"> </span>last<span class="w"> </span>one:
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">                </span>update<span class="w"> </span>target<span class="w"> </span>to<span class="w"> </span>point<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>corresponding<span class="w"> </span>attribute<span class="w"> </span>of<span class="w"> </span>target
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a><span class="w">            </span><span class="nb">set</span><span class="w"> </span>the<span class="w"> </span>last<span class="w"> </span>attribute<span class="w"> </span>of<span class="w"> </span>target<span class="w"> </span>to<span class="w"> </span>value<span class="w"> </span>u
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span>qris_data
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="k">function</span><span class="w"> </span>parse_qris<span class="o">(</span>input_string:<span class="w"> </span>str<span class="o">)</span><span class="w"> </span>-&gt;<span class="w"> </span>Optional<span class="o">[</span>QrisData<span class="o">]</span>:
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">    </span>initialize<span class="w"> </span>index<span class="w"> </span>as<span class="w"> </span><span class="m">0</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">    </span>initialize<span class="w"> </span>result<span class="w"> </span>as<span class="w"> </span>an<span class="w"> </span>empty<span class="w"> </span>dictionary
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span>index<span class="w"> </span>is<span class="w"> </span>less<span class="w"> </span>than<span class="w"> </span>length<span class="w"> </span>of<span class="w"> </span>input_string:
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">        </span>extract<span class="w"> </span>qr_id<span class="w"> </span>as<span class="w"> </span>substring<span class="w"> </span>from<span class="w"> </span>index<span class="w"> </span>to<span class="w"> </span>index<span class="w"> </span>+<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">        </span>extract<span class="w"> </span>qr_id_length<span class="w"> </span>as<span class="w"> </span>substring<span class="w"> </span>from<span class="w"> </span>index<span class="w"> </span>+<span class="w"> </span><span class="m">2</span><span class="w"> </span>to<span class="w"> </span>index<span class="w"> </span>+<span class="w"> </span><span class="m">4</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">        </span>try<span class="w"> </span>to<span class="w"> </span>convert<span class="w"> </span>qr_id_length<span class="w"> </span>to<span class="w"> </span>integer<span class="w"> </span>qr_id_value_length:
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span>conversion<span class="w"> </span>fails,<span class="w"> </span><span class="k">return</span><span class="w"> </span>None
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">        </span>extract<span class="w"> </span>qr_id_value<span class="w"> </span>as<span class="w"> </span>substring<span class="w"> </span>from<span class="w"> </span>index<span class="w"> </span>+<span class="w"> </span><span class="m">4</span><span class="w"> </span>to<span class="w"> </span>index<span class="w"> </span>+<span class="w"> </span><span class="m">4</span><span class="w"> </span>+<span class="w"> </span>qr_id_value_length
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">        </span>store<span class="w"> </span>qr_id_value<span class="w"> </span><span class="k">in</span><span class="w"> </span>result<span class="w"> </span>with<span class="w"> </span>key<span class="w"> </span>qr_id
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span>qr_id<span class="w"> </span>is<span class="w"> </span>between<span class="w"> </span><span class="m">26</span><span class="w"> </span>and<span class="w"> </span><span class="m">40</span><span class="w"> </span>or<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="o">[</span><span class="m">51</span>,<span class="w"> </span><span class="m">62</span><span class="o">]</span>:
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">            </span>initialize<span class="w"> </span>nested_index<span class="w"> </span>as<span class="w"> </span><span class="m">0</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span>nested_index<span class="w"> </span>is<span class="w"> </span>less<span class="w"> </span>than<span class="w"> </span>length<span class="w"> </span>of<span class="w"> </span>qr_id_value:
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="w">                </span>try<span class="w"> </span>to<span class="w"> </span>extract<span class="w"> </span>nested<span class="w"> </span>qr_id<span class="w"> </span>as<span class="w"> </span>substring<span class="w"> </span>from<span class="w"> </span>nested_index<span class="w"> </span>to<span class="w"> </span>nested_index<span class="w"> </span>+<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">                </span>extract<span class="w"> </span>nqi_length<span class="w"> </span>as<span class="w"> </span>substring<span class="w"> </span>from<span class="w"> </span>nested_index<span class="w"> </span>+<span class="w"> </span><span class="m">2</span><span class="w"> </span>to<span class="w"> </span>nested_index<span class="w"> </span>+<span class="w"> </span><span class="m">4</span>
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a><span class="w">                </span>convert<span class="w"> </span>nqi_length<span class="w"> </span>to<span class="w"> </span>integer<span class="w"> </span>nqi_value_length
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a><span class="w">                </span>calculate<span class="w"> </span>nqi_value_index<span class="w"> </span>as<span class="w"> </span>nested_index<span class="w"> </span>+<span class="w"> </span><span class="m">4</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="w">                </span>calculate<span class="w"> </span>nqi_value_index_offset<span class="w"> </span>as<span class="w"> </span>nested_index<span class="w"> </span>+<span class="w"> </span><span class="m">4</span><span class="w"> </span>+<span class="w"> </span>nqi_value_length
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>
+</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="w">                </span>extract<span class="w"> </span>nqi_value<span class="w"> </span>as<span class="w"> </span>substring<span class="w"> </span>from<span class="w"> </span>nqi_value_index<span class="w"> </span>to<span class="w"> </span>nqi_value_index_offset
+</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a><span class="w">                </span>store<span class="w"> </span>nqi_value<span class="w"> </span><span class="k">in</span><span class="w"> </span>result<span class="w"> </span>with<span class="w"> </span>key<span class="w"> </span><span class="s2">&quot;qr_id-nqi&quot;</span>
+</span><span id="__span-2-65"><a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>
+</span><span id="__span-2-66"><a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="w">                </span>update<span class="w"> </span>nested_index<span class="w"> </span>by<span class="w"> </span>adding<span class="w"> </span><span class="m">4</span><span class="w"> </span>+<span class="w"> </span>nqi_value_length
+</span><span id="__span-2-67"><a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="w">                </span><span class="k">if</span><span class="w"> </span>any<span class="w"> </span>extraction<span class="w"> </span>or<span class="w"> </span>conversion<span class="w"> </span>fails,<span class="w"> </span><span class="k">return</span><span class="w"> </span>None
+</span><span id="__span-2-68"><a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a>
+</span><span id="__span-2-69"><a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="w">        </span>update<span class="w"> </span>index<span class="w"> </span>by<span class="w"> </span>adding<span class="w"> </span><span class="m">4</span><span class="w"> </span>+<span class="w"> </span>qr_id_value_length
+</span><span id="__span-2-70"><a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>
+</span><span id="__span-2-71"><a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a><span class="w">    </span>call<span class="w"> </span>qris_processor<span class="w"> </span>with<span class="w"> </span>result<span class="w"> </span>and<span class="w"> </span>store<span class="w"> </span>the<span class="w"> </span>returned<span class="w"> </span>object<span class="w"> </span><span class="k">in</span><span class="w"> </span>qris_data
+</span><span id="__span-2-72"><a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a><span class="w">    </span><span class="nb">set</span><span class="w"> </span>raw<span class="w"> </span>attribute<span class="w"> </span>of<span class="w"> </span>qris_data<span class="w"> </span>to<span class="w"> </span>input_string
+</span><span id="__span-2-73"><a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a>
+</span><span id="__span-2-74"><a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span>qris_data.merchant_account_2.identifier<span class="w"> </span>equals<span class="w"> </span><span class="s1">&#39;ID.CO.QRIS.WWW&#39;</span>:
+</span><span id="__span-2-75"><a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span>qris_data
+</span><span id="__span-2-76"><a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">    </span><span class="k">else</span>:
+</span><span id="__span-2-77"><a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span>None<span class="w">  </span><span class="c1"># invalid QRIS provider</span>
+</span></code></pre></div>
+<h3 id="contoh-qris">Contoh QRIS:<a class="headerlink" href="#contoh-qris" title="Permanent link">&para;</a></h3>
+<p><img alt="qris.png" src="../../images/qris.png" /></p>
+<p>Berikut adalah penjelasan step by step untuk memproses QRIS berdasarkan
+contoh input berikut:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>00020101021126550016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE51440014ID.CO.QRIS.WWW0215ID20190022915550303UBE5204839853033605802ID5906Baznas6013Jakarta Pusat61051034062070703A016304A402
+</span></code></pre></div>
+<h3 id="1-memulai-parse_qris">1. Memulai <code>parse_qris</code>:<a class="headerlink" href="#1-memulai-parse_qris" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Index</strong> dimulai dari <code>0</code>.</li>
+<li><strong>Result</strong> adalah dictionary kosong.</li>
+</ul>
+<h3 id="2-memproses-qris-secara-bertahap">2. Memproses QRIS secara bertahap:<a class="headerlink" href="#2-memproses-qris-secara-bertahap" title="Permanent link">&para;</a></h3>
+<h4 id="iterasi-1">Iterasi 1:<a class="headerlink" href="#iterasi-1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>00</code> (dari index <code>0-2</code>)</li>
+<li><strong>qr_id_length</strong>: <code>02</code> (dari index <code>2-4</code>)</li>
+<li><strong>qr_id_value_length</strong>: <code>2</code></li>
+<li><strong>qr_id_value</strong>: <code>01</code> (dari index <code>4-6</code>)</li>
+<li>
+<p><strong>Result</strong>: <code>{"00": "01"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>6</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-2">Iterasi 2:<a class="headerlink" href="#iterasi-2" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>01</code></li>
+<li><strong>qr_id_length</strong>: <code>02</code></li>
+<li><strong>qr_id_value_length</strong>: <code>2</code></li>
+<li><strong>qr_id_value</strong>: <code>11</code></li>
+<li>
+<p><strong>Result</strong>: <code>{"00": "01", "01": "11"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>10</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-3">Iterasi 3:<a class="headerlink" href="#iterasi-3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>26</code> (Merupakan Merchant Account)</li>
+<li><strong>qr_id_length</strong>: <code>55</code></li>
+<li><strong>qr_id_value_length</strong>: <code>55</code></li>
+<li><strong>qr_id_value</strong>: <code>0016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE</code></li>
+<li>
+<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26": "0016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>69</code>.</p>
+</li>
+</ul>
+<p><strong>Nested Iterasi dalam <code>26</code>:</strong></p>
+<ul>
+<li><strong>nqi</strong>: <code>00</code></li>
+<li><strong>nqi_length</strong>: <code>16</code></li>
+<li><strong>nqi_value</strong>: <code>ID.CO.SHOPEE.WWW</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26": "0016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE", "26-00": "ID.CO.SHOPEE.WWW"}</code></p>
+</li>
+<li>
+<p><strong>nqi</strong>: <code>01</code></p>
+</li>
+<li><strong>nqi_length</strong>: <code>18</code></li>
+<li><strong>nqi_value</strong>: <code>936009180000000018</code></li>
+<li>
+<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018"}</code></p>
+</li>
+<li>
+<p><strong>nqi</strong>: <code>02</code></p>
+</li>
+<li><strong>nqi_length</strong>: <code>02</code></li>
+<li><strong>nqi_value</strong>: <code>18</code></li>
+<li>
+<p><strong>Result</strong>: <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18"}</code></p>
+</li>
+<li>
+<p><strong>nqi</strong>: <code>03</code></p>
+</li>
+<li><strong>nqi_length</strong>: <code>03</code></li>
+<li><strong>nqi_value</strong>: <code>UBE</code></li>
+<li><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE"}</code></li>
+</ul>
+<h4 id="iterasi-4">Iterasi 4:<a class="headerlink" href="#iterasi-4" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>51</code> (Merupakan Merchant Account 2)</li>
+<li><strong>qr_id_length</strong>: <code>44</code></li>
+<li><strong>qr_id_value_length</strong>: <code>44</code></li>
+<li><strong>qr_id_value</strong>: <code>0014ID.CO.QRIS.WWW0215ID20190022915550303UBE</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51": "0014ID.CO.QRIS.WWW0215ID20190022915550303UBE"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>117</code>.</p>
+</li>
+</ul>
+<p><strong>Nested Iterasi dalam <code>51</code>:</strong></p>
+<ul>
+<li><strong>nqi</strong>: <code>00</code></li>
+<li><strong>nqi_length</strong>: <code>14</code></li>
+<li><strong>nqi_value</strong>: <code>ID.CO.QRIS.WWW</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW"}</code></p>
+</li>
+<li>
+<p><strong>nqi</strong>: <code>02</code></p>
+</li>
+<li><strong>nqi_length</strong>: <code>15</code></li>
+<li><strong>nqi_value</strong>: <code>ID2019002291555</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555"}</code></p>
+</li>
+<li>
+<p><strong>nqi</strong>: <code>03</code></p>
+</li>
+<li><strong>nqi_length</strong>: <code>03</code></li>
+<li><strong>nqi_value</strong>: <code>UBE</code></li>
+<li><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE"}</code></li>
+</ul>
+<h4 id="iterasi-5">Iterasi 5:<a class="headerlink" href="#iterasi-5" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>52</code></li>
+<li><strong>qr_id_length</strong>: <code>04</code></li>
+<li><strong>qr_id_value_length</strong>: <code>4</code></li>
+<li><strong>qr_id_value</strong>: <code>8398</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>127</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-6">Iterasi 6:<a class="headerlink" href="#iterasi-6" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>53</code></li>
+<li><strong>qr_id_length</strong>: <code>03</code></li>
+<li><strong>qr_id_value_length</strong>: <code>3</code></li>
+<li><strong>qr_id_value</strong>: <code>360</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>134</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-7">Iterasi 7:<a class="headerlink" href="#iterasi-7" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>58</code></li>
+<li><strong>qr_id_length</strong>: <code>02</code></li>
+<li><strong>qr_id_value_length</strong>: <code>2</code></li>
+<li><strong>qr_id_value</strong>: <code>ID</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>138</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-8">Iterasi 8:<a class="headerlink" href="#iterasi-8" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>59</code></li>
+<li><strong>qr_id_length</strong>: <code>06</code></li>
+<li><strong>qr_id_value_length</strong>: <code>6</code></li>
+<li><strong>qr_id_value</strong>: <code>Baznas</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>148</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-9">Iterasi 9:<a class="headerlink" href="#iterasi-9" title="Permanent link">&para;</a></h4>
+<p>-</p>
+<p><strong>qr_id</strong>: <code>60</code></p>
+<ul>
+<li><strong>qr_id_length</strong>: <code>13</code></li>
+<li><strong>qr_id_value_length</strong>: <code>13</code></li>
+<li><strong>qr_id_value</strong>: <code>Jakarta Pusat</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>165</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-10">Iterasi 10:<a class="headerlink" href="#iterasi-10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>61</code></li>
+<li><strong>qr_id_length</strong>: <code>05</code></li>
+<li><strong>qr_id_value_length</strong>: <code>5</code></li>
+<li><strong>qr_id_value</strong>: <code>10340</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>174</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-11">Iterasi 11:<a class="headerlink" href="#iterasi-11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>62</code> (Additional Info)</li>
+<li><strong>qr_id_length</strong>: <code>07</code></li>
+<li><strong>qr_id_value_length</strong>: <code>7</code></li>
+<li><strong>qr_id_value</strong>: <code>03A0163</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62": "03A0163"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>183</code>.</p>
+</li>
+</ul>
+<h4 id="iterasi-12">Iterasi 12:<a class="headerlink" href="#iterasi-12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>qr_id</strong>: <code>63</code></li>
+<li><strong>qr_id_length</strong>: <code>04</code></li>
+<li><strong>qr_id_value_length</strong>: <code>4</code></li>
+<li><strong>qr_id_value</strong>: <code>A402</code></li>
+<li>
+<p><strong>Result</strong>:
+  <code>{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62-07": "03A0163", "63": "A402"}</code></p>
+</li>
+<li>
+<p><strong>Index</strong> sekarang menjadi <code>191</code>, yang merupakan akhir dari string input.</p>
+</li>
+</ul>
+<h3 id="3-memanggil-qris_processor">3. Memanggil <code>qris_processor</code><a class="headerlink" href="#3-memanggil-qris_processor" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Setelah semua data diparsing, <code>qris_processor</code> akan memetakan data dari <code>Result</code> ke atribut <code>QrisData</code>.</li>
+<li><strong>Raw</strong> dari <code>qris_data</code> diisi dengan <code>input_string</code>.</li>
+</ul>
+<h3 id="4-memvalidasi-qris">4. Memvalidasi QRIS:<a class="headerlink" href="#4-memvalidasi-qris" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Memeriksa apakah <code>merchant_account_2.identifier</code> sama dengan <code>'ID.CO.QRIS.WWW'</code>.</li>
+<li>Jika ya, kembalikan <code>qris_data</code>.</li>
+<li>Jika tidak, kembalikan <code>None</code>.</li>
+</ul>
+<h3 id="5-hasil-akhir">5. Hasil Akhir<a class="headerlink" href="#5-hasil-akhir" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Berdasarkan contoh di atas, data QRIS valid, dan <code>qris_data</code> yang diproses akan dikembalikan, berisi informasi lengkap
+  seperti <code>merchant_name</code> (<code>Baznas</code>), <code>merchant_city</code> (<code>Jakarta Pusat</code>), <code>amount</code>, dan lainnya sesuai dengan hasil
+  parsing.</li>
+</ul>
+<hr />
+<h2 id="core-reference">Core reference<a class="headerlink" href="#core-reference" title="Permanent link">&para;</a></h2>
+<p><a href="https://gist.github.com/utsmannn/06ef96e12237ff622de687d5b582630f">utsmannn/qris_parser.py</a></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 utsmannn (Muhammad Utsman)
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/utsmannn" target="_blank" rel="noopener" title="utsmannn on Github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/utsmannn/" target="_blank" rel="noopener" title="utsmannn on Linkedin" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Tersalin ke clipboard", "clipboard.copy": "Salin ke clipboard", "search.result.more.one": "1 lagi di halaman ini", "search.result.more.other": "# lagi di halaman ini", "search.result.none": "Tidak ada dokumen yang sesuai", "search.result.one": "1 dokumen ditemukan", "search.result.other": "# dokumen ditemukan", "search.result.placeholder": "Ketik untuk mulai pencarian", "search.result.term.missing": "Tidak ada", "select.version": "Pilih versi"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+    
+  </body>
+</html>

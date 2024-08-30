@@ -14,6 +14,8 @@
         <link rel="prev" href="../endpoint/">
       
       
+        <link rel="next" href="../qris/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
@@ -349,6 +351,26 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QRIS Information
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -431,19 +453,23 @@ gateway is made.</p>
 <p>In the context of using the top-up balance API with a "fake payment" method, the user needs to follow these steps to
 complete the simulation:</p>
 <h3 id="simulation-steps-for-fake-payment">Simulation Steps for Fake Payment<a class="headerlink" href="#simulation-steps-for-fake-payment" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Visit the Payment URL</label><label for="__tabbed_1_2">Simulate the Payment</label><label for="__tabbed_1_3">Check Account Balance and Invoice Status</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Visit the Payment URL</label><label for="__tabbed_1_2">Simulate the Payment</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>After initiating a top-up request (<code>POST /api/v1/topup_balance</code>), the response will include an invoice_url.
 The user must go to the provided <code>invoice_url</code> to simulate the payment process.</p>
-<p><img alt="img1.png" src="https://i.ibb.co.com/JrtQ9xP/img1.png" /></p>
+<p><img alt="SCR-20240830-uizn.png" src="../images/SCR-20240830-uizn.png" /></p>
 </div>
 <div class="tabbed-block">
 <p>On the payment page, follow the instructions to complete the fake payment.
 After the simulated payment is completed, the page will redirect to a blank page with the message "Thank you for your
 payment".</p>
-<p><img alt="img3.png" src="https://i.ibb.co.com/BzKKzzG/img3.png" /></p>
 </div>
+</div>
+</div>
+<p><img alt="SCR-20240830-ujbl.png" src="../images/SCR-20240830-ujbl.png" /></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Check Account Balance and Invoice Status</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
 <p>After seeing the "Thank you for your payment" message, the user's account balance will be updated.
 The status of the top-up invoice will change to "PAID".
