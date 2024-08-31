@@ -1,164 +1,214 @@
 code,name,category,subcategory,description,nominal_min,nominal_max,admin_fee,service_fee,status,icon_name
+PULSA01,Pulsa Indosat 10K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 10K,10000,10000,1500,2000,Active,ic-prd-indosat.png
+PULSA02,Pulsa Indosat 25K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 25K,25000,25000,1500,2000,Active,ic-prd-indosat.png
+PULSA03,Pulsa Indosat 50K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 50K,50000,50000,1500,2000,Active,ic-prd-indosat.png
+PULSA04,Pulsa Indosat 100K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 100K,100000,100000,1500,2000,Active,ic-prd-indosat.png
+PULSA17,Pulsa Indosat 5K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 5K,5000,5000,1500,2000,Active,ic-prd-indosat.png
+PULSA22,Pulsa Indosat 15K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 15K,15000,15000,1500,2000,Active,ic-prd-indosat.png
+PULSA27,Pulsa Indosat 30K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 30K,30000,30000,1500,2000,Active,ic-prd-indosat.png
+PULSA32,Pulsa Indosat 75K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 75K,75000,75000,1500,2000,Active,ic-prd-indosat.png
+PULSA37,Pulsa Indosat 150K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 150K,150000,150000,1500,2000,Active,ic-prd-indosat.png
+PULSA42,Pulsa Indosat 300K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 300K,300000,300000,1500,2000,Active,ic-prd-indosat.png
+PULSA47,Pulsa Indosat 500K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 500K,500000,500000,1500,2000,Active,ic-prd-indosat.png
+PULSA52,Pulsa Indosat 1M,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 1M,1000000,1000000,1500,2000,Active,ic-prd-indosat.png
+PULSA21,Pulsa Smartfren 5K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 5K,5000,5000,1500,2000,Active,ic-prd-smartfren.png
+PULSA26,Pulsa Smartfren 15K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 15K,15000,15000,1500,2000,Active,ic-prd-smartfren.png
+PULSA31,Pulsa Smartfren 30K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 30K,30000,30000,1500,2000,Active,ic-prd-smartfren.png
+PULSA36,Pulsa Smartfren 75K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 75K,75000,75000,1500,2000,Active,ic-prd-smartfren.png
+PULSA41,Pulsa Smartfren 150K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 150K,150000,150000,1500,2000,Active,ic-prd-smartfren.png
+PULSA46,Pulsa Smartfren 300K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 300K,300000,300000,1500,2000,Active,ic-prd-smartfren.png
+PULSA51,Pulsa Smartfren 500K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 500K,500000,500000,1500,2000,Active,ic-prd-smartfren.png
+PULSA56,Pulsa Smartfren 1M,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 1M,1000000,1000000,1500,2000,Active,ic-prd-smartfren.png
+PULSA05,Pulsa Telkomsel 10K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 10K,10000,10000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA06,Pulsa Telkomsel 25K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 25K,25000,25000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA07,Pulsa Telkomsel 50K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 50K,50000,50000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA08,Pulsa Telkomsel 100K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 100K,100000,100000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA18,Pulsa Telkomsel 5K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 5K,5000,5000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA23,Pulsa Telkomsel 15K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 15K,15000,15000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA28,Pulsa Telkomsel 30K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 30K,30000,30000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA33,Pulsa Telkomsel 75K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 75K,75000,75000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA38,Pulsa Telkomsel 150K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 150K,150000,150000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA43,Pulsa Telkomsel 300K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 300K,300000,300000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA48,Pulsa Telkomsel 500K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 500K,500000,500000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA53,Pulsa Telkomsel 1M,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 1M,1000000,1000000,1500,2000,Active,ic-prd-telkomsel.png
+PULSA13,Pulsa Tri 10K,Pulsa,TRI,Isi Ulang Pulsa Tri 10K,10000,10000,1500,2000,Active,ic-prd-tri.png
+PULSA14,Pulsa Tri 25K,Pulsa,TRI,Isi Ulang Pulsa Tri 25K,25000,25000,1500,2000,Active,ic-prd-tri.png
+PULSA15,Pulsa Tri 50K,Pulsa,TRI,Isi Ulang Pulsa Tri 50K,50000,50000,1500,2000,Active,ic-prd-tri.png
+PULSA16,Pulsa Tri 100K,Pulsa,TRI,Isi Ulang Pulsa Tri 100K,100000,100000,1500,2000,Active,ic-prd-tri.png
+PULSA20,Pulsa Tri 5K,Pulsa,TRI,Isi Ulang Pulsa Tri 5K,5000,5000,1500,2000,Active,ic-prd-tri.png
+PULSA25,Pulsa Tri 15K,Pulsa,TRI,Isi Ulang Pulsa Tri 15K,15000,15000,1500,2000,Active,ic-prd-tri.png
+PULSA30,Pulsa Tri 30K,Pulsa,TRI,Isi Ulang Pulsa Tri 30K,30000,30000,1500,2000,Active,ic-prd-tri.png
+PULSA35,Pulsa Tri 75K,Pulsa,TRI,Isi Ulang Pulsa Tri 75K,75000,75000,1500,2000,Active,ic-prd-tri.png
+PULSA40,Pulsa Tri 150K,Pulsa,TRI,Isi Ulang Pulsa Tri 150K,150000,150000,1500,2000,Active,ic-prd-tri.png
+PULSA45,Pulsa Tri 300K,Pulsa,TRI,Isi Ulang Pulsa Tri 300K,300000,300000,1500,2000,Active,ic-prd-tri.png
+PULSA50,Pulsa Tri 500K,Pulsa,TRI,Isi Ulang Pulsa Tri 500K,500000,500000,1500,2000,Active,ic-prd-tri.png
+PULSA55,Pulsa Tri 1M,Pulsa,TRI,Isi Ulang Pulsa Tri 1M,1000000,1000000,1500,2000,Active,ic-prd-tri.png
+PULSA09,Pulsa XL 10K,Pulsa,XL,Isi Ulang Pulsa XL 10K,10000,10000,1500,2000,Active,ic-prd-xl.png
+PULSA10,Pulsa XL 25K,Pulsa,XL,Isi Ulang Pulsa XL 25K,25000,25000,1500,2000,Active,ic-prd-xl.png
+PULSA11,Pulsa XL 50K,Pulsa,XL,Isi Ulang Pulsa XL 50K,50000,50000,1500,2000,Active,ic-prd-xl.png
+PULSA12,Pulsa XL 100K,Pulsa,XL,Isi Ulang Pulsa XL 100K,100000,100000,1500,2000,Active,ic-prd-xl.png
+PULSA19,Pulsa XL 5K,Pulsa,XL,Isi Ulang Pulsa XL 5K,5000,5000,1500,2000,Active,ic-prd-xl.png
+PULSA24,Pulsa XL 15K,Pulsa,XL,Isi Ulang Pulsa XL 15K,15000,15000,1500,2000,Active,ic-prd-xl.png
+PULSA29,Pulsa XL 30K,Pulsa,XL,Isi Ulang Pulsa XL 30K,30000,30000,1500,2000,Active,ic-prd-xl.png
+PULSA34,Pulsa XL 75K,Pulsa,XL,Isi Ulang Pulsa XL 75K,75000,75000,1500,2000,Active,ic-prd-xl.png
+PULSA39,Pulsa XL 150K,Pulsa,XL,Isi Ulang Pulsa XL 150K,150000,150000,1500,2000,Active,ic-prd-xl.png
+PULSA44,Pulsa XL 300K,Pulsa,XL,Isi Ulang Pulsa XL 300K,300000,300000,1500,2000,Active,ic-prd-xl.png
+PULSA49,Pulsa XL 500K,Pulsa,XL,Isi Ulang Pulsa XL 500K,500000,500000,1500,2000,Active,ic-prd-xl.png
+PULSA54,Pulsa XL 1M,Pulsa,XL,Isi Ulang Pulsa XL 1M,1000000,1000000,1500,2000,Active,ic-prd-xl.png
+DATA001,Indosat 37GB,Data,Indosat,Paket Data 37GB dari Indosat,195000,195000,2000,0,Active,ic-prd-indosat.png
+DATA004,Indosat 33GB,Data,Indosat,Paket Data 33GB dari Indosat,162000,162000,2000,0,Active,ic-prd-indosat.png
+DATA009,Indosat 4GB,Data,Indosat,Paket Data 4GB dari Indosat,22000,22000,1000,0,Active,ic-prd-indosat.png
+DATA011,Indosat 40GB,Data,Indosat,Paket Data 40GB dari Indosat,180000,180000,2000,0,Active,ic-prd-indosat.png
+DATA019,Indosat 4GB,Data,Indosat,Paket Data 4GB dari Indosat,16000,16000,2000,0,Active,ic-prd-indosat.png
+DATA022,Indosat 50GB,Data,Indosat,Paket Data 50GB dari Indosat,198000,198000,2000,0,Active,ic-prd-indosat.png
+DATA027,Indosat 5GB,Data,Indosat,Paket Data 5GB dari Indosat,12000,12000,3000,0,Active,ic-prd-indosat.png
+DATA033,Indosat 10GB,Data,Indosat,Paket Data 10GB dari Indosat,44000,44000,1000,0,Active,ic-prd-indosat.png
+DATA036,Indosat 32GB,Data,Indosat,Paket Data 32GB dari Indosat,169000,169000,2000,0,Active,ic-prd-indosat.png
+DATA040,Indosat 42GB,Data,Indosat,Paket Data 42GB dari Indosat,174000,174000,2000,0,Active,ic-prd-indosat.png
+DATA002,Smartfren 24GB,Data,Smartfren,Paket Data 24GB dari Smartfren,134000,134000,2000,0,Active,ic-prd-smartfren.png
+DATA023,Smartfren 16GB,Data,Smartfren,Paket Data 16GB dari Smartfren,97000,97000,1000,0,Active,ic-prd-smartfren.png
+DATA026,Smartfren 19GB,Data,Smartfren,Paket Data 19GB dari Smartfren,91000,91000,2000,0,Active,ic-prd-smartfren.png
+DATA034,Smartfren 18GB,Data,Smartfren,Paket Data 18GB dari Smartfren,82000,82000,2000,0,Active,ic-prd-smartfren.png
+DATA003,Telkomsel 20GB,Data,Telkomsel,Paket Data 20GB dari Telkomsel,97000,97000,1000,0,Active,ic-prd-telkomsel.png
+DATA008,Telkomsel 20GB,Data,Telkomsel,Paket Data 20GB dari Telkomsel,94000,94000,2000,0,Active,ic-prd-telkomsel.png
+DATA012,Telkomsel 48GB,Data,Telkomsel,Paket Data 48GB dari Telkomsel,160000,160000,2000,0,Active,ic-prd-telkomsel.png
+DATA020,Telkomsel 38GB,Data,Telkomsel,Paket Data 38GB dari Telkomsel,197000,197000,2000,0,Active,ic-prd-telkomsel.png
+DATA028,Telkomsel 38GB,Data,Telkomsel,Paket Data 38GB dari Telkomsel,153000,153000,2000,0,Active,ic-prd-telkomsel.png
+DATA035,Telkomsel 35GB,Data,Telkomsel,Paket Data 35GB dari Telkomsel,159000,159000,2000,0,Active,ic-prd-telkomsel.png
+DATA044,Telkomsel 15GB,Data,Telkomsel,Paket Data 15GB dari Telkomsel,65000,65000,1000,0,Active,ic-prd-telkomsel.png
+DATA048,Telkomsel 39GB,Data,Telkomsel,Paket Data 39GB dari Telkomsel,196000,196000,1000,0,Active,ic-prd-telkomsel.png
+DATA013,Tri 31GB,Data,Tri,Paket Data 31GB dari Tri,186000,186000,2000,0,Active,ic-prd-tri.png
+DATA015,Tri 1GB,Data,Tri,Paket Data 1GB dari Tri,14000,14000,1000,0,Active,ic-prd-tri.png
+DATA017,Tri 31GB,Data,Tri,Paket Data 31GB dari Tri,168000,168000,3000,0,Active,ic-prd-tri.png
+DATA024,Tri 45GB,Data,Tri,Paket Data 45GB dari Tri,156000,156000,2000,0,Active,ic-prd-tri.png
+DATA025,Tri 45GB,Data,Tri,Paket Data 45GB dari Tri,178000,178000,2000,0,Active,ic-prd-tri.png
+DATA029,Tri 31GB,Data,Tri,Paket Data 31GB dari Tri,190000,190000,1000,0,Active,ic-prd-tri.png
+DATA031,Tri 19GB,Data,Tri,Paket Data 19GB dari Tri,78000,78000,3000,0,Active,ic-prd-tri.png
+DATA032,Tri 5GB,Data,Tri,Paket Data 5GB dari Tri,17000,17000,3000,0,Active,ic-prd-tri.png
+DATA037,Tri 1GB,Data,Tri,Paket Data 1GB dari Tri,16000,16000,2000,0,Active,ic-prd-tri.png
+DATA039,Tri 28GB,Data,Tri,Paket Data 28GB dari Tri,128000,128000,2000,0,Active,ic-prd-tri.png
+DATA041,Tri 42GB,Data,Tri,Paket Data 42GB dari Tri,163000,163000,2000,0,Active,ic-prd-tri.png
+DATA042,Tri 12GB,Data,Tri,Paket Data 12GB dari Tri,67000,67000,2000,0,Active,ic-prd-tri.png
+DATA045,Tri 43GB,Data,Tri,Paket Data 43GB dari Tri,193000,193000,3000,0,Active,ic-prd-tri.png
+DATA046,Tri 8GB,Data,Tri,Paket Data 8GB dari Tri,44000,44000,2000,0,Active,ic-prd-tri.png
+DATA050,Tri 44GB,Data,Tri,Paket Data 44GB dari Tri,170000,170000,2000,0,Active,ic-prd-tri.png
+DATA005,XL 49GB,Data,XL,Paket Data 49GB dari XL,151000,151000,1000,0,Active,ic-prd-xl.png
+DATA006,XL 22GB,Data,XL,Paket Data 22GB dari XL,137000,137000,1000,0,Active,ic-prd-xl.png
+DATA007,XL 28GB,Data,XL,Paket Data 28GB dari XL,121000,121000,2000,0,Active,ic-prd-xl.png
+DATA010,XL 43GB,Data,XL,Paket Data 43GB dari XL,198000,198000,1000,0,Active,ic-prd-xl.png
+DATA014,XL 37GB,Data,XL,Paket Data 37GB dari XL,154000,154000,2000,0,Active,ic-prd-xl.png
+DATA016,XL 42GB,Data,XL,Paket Data 42GB dari XL,154000,154000,1000,0,Active,ic-prd-xl.png
+DATA018,XL 39GB,Data,XL,Paket Data 39GB dari XL,186000,186000,3000,0,Active,ic-prd-xl.png
+DATA021,XL 2GB,Data,XL,Paket Data 2GB dari XL,11000,11000,1000,0,Active,ic-prd-xl.png
+DATA030,XL 43GB,Data,XL,Paket Data 43GB dari XL,168000,168000,1000,0,Active,ic-prd-xl.png
+DATA038,XL 9GB,Data,XL,Paket Data 9GB dari XL,34000,34000,1000,0,Active,ic-prd-xl.png
+DATA043,XL 5GB,Data,XL,Paket Data 5GB dari XL,20000,20000,2000,0,Active,ic-prd-xl.png
+DATA047,XL 41GB,Data,XL,Paket Data 41GB dari XL,197000,197000,1000,0,Active,ic-prd-xl.png
+DATA049,XL 28GB,Data,XL,Paket Data 28GB dari XL,100000,100000,3000,0,Active,ic-prd-xl.png
+DANA001,DANA 10K,E-Wallet,DANA,Isi Saldo DANA 10K,10000,10000,1000,1500,Active,ic-prd-dana.png
+DANA002,DANA 25K,E-Wallet,DANA,Isi Saldo DANA 25K,25000,25000,1000,1500,Active,ic-prd-dana.png
+DANA003,DANA 50K,E-Wallet,DANA,Isi Saldo DANA 50K,50000,50000,1000,1500,Active,ic-prd-dana.png
+DANA004,DANA 100K,E-Wallet,DANA,Isi Saldo DANA 100K,100000,100000,1000,1500,Active,ic-prd-dana.png
+DANA005,DANA 500K,E-Wallet,DANA,Isi Saldo DANA 500K,500000,500000,1000,1500,Active,ic-prd-dana.png
+DANA006,DANA 1M,E-Wallet,DANA,Isi Saldo DANA 1M,1000000,1000000,1000,1500,Active,ic-prd-dana.png
+GOPAY01,GoPay 10K,E-Wallet,GoPay,Isi Saldo GoPay 10K,10000,10000,1000,1500,Active,ic-prd-gopay.png
+GOPAY02,GoPay 25K,E-Wallet,GoPay,Isi Saldo GoPay 25K,25000,25000,1000,1500,Active,ic-prd-gopay.png
+GOPAY03,GoPay 50K,E-Wallet,GoPay,Isi Saldo GoPay 50K,50000,50000,1000,1500,Active,ic-prd-gopay.png
+GOPAY04,GoPay 100K,E-Wallet,GoPay,Isi Saldo GoPay 100K,100000,100000,1000,1500,Active,ic-prd-gopay.png
+GOPAY05,GoPay 500K,E-Wallet,GoPay,Isi Saldo GoPay 500K,500000,500000,1000,1500,Active,ic-prd-gopay.png
+GOPAY06,GoPay 1M,E-Wallet,GoPay,Isi Saldo GoPay 1M,1000000,1000000,1000,1500,Active,ic-prd-gopay.png
+LINKAJA01,LinkAja 10K,E-Wallet,LinkAja,Isi Saldo LinkAja 10K,10000,10000,1000,1500,Active,ic-prd-linkaja.png
+LINKAJA02,LinkAja 25K,E-Wallet,LinkAja,Isi Saldo LinkAja 25K,25000,25000,1000,1500,Active,ic-prd-linkaja.png
+LINKAJA03,LinkAja 50K,E-Wallet,LinkAja,Isi Saldo LinkAja 50K,50000,50000,1000,1500,Active,ic-prd-linkaja.png
+LINKAJA04,LinkAja 100K,E-Wallet,LinkAja,Isi Saldo LinkAja 100K,100000,100000,1000,1500,Active,ic-prd-linkaja.png
+LINKAJA05,LinkAja 500K,E-Wallet,LinkAja,Isi Saldo LinkAja 500K,500000,500000,1000,1500,Active,ic-prd-linkaja.png
+LINKAJA06,LinkAja 1M,E-Wallet,LinkAja,Isi Saldo LinkAja 1M,1000000,1000000,1000,1500,Active,ic-prd-linkaja.png
+OVO001,OVO 10K,E-Wallet,OVO,Isi Saldo OVO 10K,10000,10000,1000,1500,Active,ic-prd-ovo.png
+OVO002,OVO 25K,E-Wallet,OVO,Isi Saldo OVO 25K,25000,25000,1000,1500,Active,ic-prd-ovo.png
+OVO003,OVO 50K,E-Wallet,OVO,Isi Saldo OVO 50K,50000,50000,1000,1500,Active,ic-prd-ovo.png
+OVO004,OVO 100K,E-Wallet,OVO,Isi Saldo OVO 100K,100000,100000,1000,1500,Active,ic-prd-ovo.png
+OVO005,OVO 500K,E-Wallet,OVO,Isi Saldo OVO 500K,500000,500000,1000,1500,Active,ic-prd-ovo.png
+OVO006,OVO 1M,E-Wallet,OVO,Isi Saldo OVO 1M,1000000,1000000,1000,1500,Active,ic-prd-ovo.png
+SHOPEEP01,ShopeePay 10K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 10K,10000,10000,1000,1500,Active,ic-prd-spay.png
+SHOPEEP02,ShopeePay 25K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 25K,25000,25000,1000,1500,Active,ic-prd-spay.png
+SHOPEEP03,ShopeePay 50K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 50K,50000,50000,1000,1500,Active,ic-prd-spay.png
+SHOPEEP04,ShopeePay 100K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 100K,100000,100000,1000,1500,Active,ic-prd-spay.png
+SHOPEEP05,ShopeePay 500K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 500K,500000,500000,1000,1500,Active,ic-prd-spay.png
+SHOPEEP06,ShopeePay 1M,E-Wallet,ShopeePay,Isi Saldo ShopeePay 1M,1000000,1000000,1000,1500,Active,ic-prd-spay.png
 PLNPRP01,PLN Prabayar 20K,PLN,PLN,Token Listrik Prabayar 20K,20000,20000,2500,5000,Active,ic-prd-pln.png
 PLNPRP02,PLN Prabayar 50K,PLN,PLN,Token Listrik Prabayar 50K,50000,50000,2500,5000,Active,ic-prd-pln.png
 PLNPRP03,PLN Prabayar 100K,PLN,PLN,Token Listrik Prabayar 100K,100000,100000,2500,5000,Active,ic-prd-pln.png
 PLNPRP04,PLN Prabayar 200K,PLN,PLN,Token Listrik Prabayar 200K,200000,200000,2500,5000,Active,ic-prd-pln.png
 PLNPRP05,PLN Prabayar 500K,PLN,PLN,Token Listrik Prabayar 500K,500000,500000,2500,5000,Active,ic-prd-pln.png
 PLNPSD01,PLN Pascabayar,PLN,PLN,Tagihan Listrik Pascabayar,50000,1000000,2500,5000,Active,ic-prd-pln.png
-PDAM001,PDAM Jakarta,PDAM,PDAM,Tagihan Air PDAM Jakarta,10000,500000,2000,3000,Active,ic-prd-pdam.png
-PDAM002,PDAM Bandung,PDAM,PDAM,Tagihan Air PDAM Bandung,10000,500000,2000,3000,Active,ic-prd-pdam.png
-PDAM003,PDAM Surabaya,PDAM,PDAM,Tagihan Air PDAM Surabaya,10000,500000,2000,3000,Active,ic-prd-pdam.png
-TELP001,Telkom Rumah,Telkom,Telkom,Tagihan Telepon Rumah,20000,500000,1500,3000,Active,ic-prd-telkom.png
-TELP002,Telkomsel Pascabayar,Telkom,Telkom,Tagihan Telkomsel Pascabayar,20000,1000000,1500,3000,Active,ic-prd-telkomsel-prabayar.png
-TELP003,Indosat Pascabayar,Telkom,Telkom,Tagihan Indosat Pascabayar,20000,1000000,1500,3000,Active,ic-prd-indosat.png
-TELP004,XL Pascabayar,Telkom,Telkom,Tagihan XL Pascabayar,20000,1000000,1500,3000,Active,ic-prd-xl.png
-PULSA01,Pulsa Indosat 10K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 10K,10000,10000,1500,2000,Active,ic-prd-indosat.png
-PULSA02,Pulsa Indosat 25K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 25K,25000,25000,1500,2000,Active,ic-prd-indosat.png
-PULSA03,Pulsa Indosat 50K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 50K,50000,50000,1500,2000,Active,ic-prd-indosat.png
-PULSA04,Pulsa Indosat 100K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 100K,100000,100000,1500,2000,Active,ic-prd-indosat.png
-PULSA05,Pulsa Telkomsel 10K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 10K,10000,10000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA06,Pulsa Telkomsel 25K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 25K,25000,25000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA07,Pulsa Telkomsel 50K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 50K,50000,50000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA08,Pulsa Telkomsel 100K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 100K,100000,100000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA09,Pulsa XL 10K,Pulsa,XL,Isi Ulang Pulsa XL 10K,10000,10000,1500,2000,Active,ic-prd-xl.png
-PULSA10,Pulsa XL 25K,Pulsa,XL,Isi Ulang Pulsa XL 25K,25000,25000,1500,2000,Active,ic-prd-xl.png
-PULSA11,Pulsa XL 50K,Pulsa,XL,Isi Ulang Pulsa XL 50K,50000,50000,1500,2000,Active,ic-prd-xl.png
-PULSA12,Pulsa XL 100K,Pulsa,XL,Isi Ulang Pulsa XL 100K,100000,100000,1500,2000,Active,ic-prd-xl.png
-PULSA13,Pulsa Tri 10K,Pulsa,TRI,Isi Ulang Pulsa Tri 10K,10000,10000,1500,2000,Active,ic-prd-tri.png
-PULSA14,Pulsa Tri 25K,Pulsa,TRI,Isi Ulang Pulsa Tri 25K,25000,25000,1500,2000,Active,ic-prd-tri.png
-PULSA15,Pulsa Tri 50K,Pulsa,TRI,Isi Ulang Pulsa Tri 50K,50000,50000,1500,2000,Active,ic-prd-tri.png
-PULSA16,Pulsa Tri 100K,Pulsa,TRI,Isi Ulang Pulsa Tri 100K,100000,100000,1500,2000,Active,ic-prd-tri.png
-TVKBL01,Nex Parabola,TV Kabel,TV Kabel,Tagihan TV Kabel Nex Parabola,50000,500000,2000,4000,Active,ic-prd-nex.png
-TVKBL02,Transvision,TV Kabel,TV Kabel,Tagihan TV Kabel Transvision,50000,500000,2000,4000,Active,ic-prd-transvision.png
-TVKBL03,First Media,TV Kabel,TV Kabel,Tagihan TV Kabel First Media,50000,500000,2000,4000,Active,ic-prd-firstmedia.png
-TVKBL04,MyRepublic,TV Kabel,TV Kabel,Tagihan TV Kabel MyRepublic,50000,500000,2000,4000,Active,ic-prd-myrepublic.png
-TVKBL05,Indihome TV,TV Kabel,TV Kabel,Tagihan Indihome TV,50000,500000,2000,4000,Active,ic-prd-indihome.png
-TVKBL06,K Vision,TV Kabel,TV Kabel,Tagihan TV Kabel K Vision,50000,500000,2000,4000,Active,ic-prd-indihome.png
-BPJS001,BPJS Kesehatan,BPJS,BPJS,Tagihan BPJS Kesehatan,25000,1000000,2500,3000,Active,ic-prd-bpjs-kes.png
-BPJS002,BPJS Ketenagakerjaan,BPJS,BPJS,Tagihan BPJS Ketenagakerjaan,25000,1000000,2500,3000,Active,ic-prd-pbjs-ket.png
-FINR001,Angsuran Adira,Finance,Finance,Angsuran Kredit Adira,50000,1000000,3000,5000,Active,ic-prd-adira.png
-FINR002,Angsuran BAF,Finance,Finance,Angsuran Kredit BAF,50000,1000000,3000,5000,Active,ic-prd-baf.png
-FINR003,Angsuran WOM,Finance,Finance,Angsuran Kredit WOM,50000,1000000,3000,5000,Active,ic-prd-wom.png
-FINR004,Angsuran FIF,Finance,Finance,Angsuran Kredit FIF,50000,1000000,3000,5000,Active,ic-prd-fif.png
-FINR005,Angsuran Mega,Finance,Finance,Angsuran Kredit Mega,50000,1000000,3000,5000,Active,ic-prd-fif.png
-FINR006,Angsuran Kredit Plus,Finance,Finance,Angsuran Kredit Plus,50000,1000000,3000,5000,Active,ic-prd-credplus.png
-GOPAY01,GoPay 10K,E-Wallet,GoPay,Isi Saldo GoPay 10K,10000,10000,1000,1500,Active,ic-prd-gopay.png
-GOPAY02,GoPay 25K,E-Wallet,GoPay,Isi Saldo GoPay 25K,25000,25000,1000,1500,Active,ic-prd-gopay.png
-GOPAY03,GoPay 50K,E-Wallet,GoPay,Isi Saldo GoPay 50K,50000,50000,1000,1500,Active,ic-prd-gopay.png
-GOPAY04,GoPay 100K,E-Wallet,GoPay,Isi Saldo GoPay 100K,100000,100000,1000,1500,Active,ic-prd-gopay.png
-GOPAY05,GoPay 500K,E-Wallet,GoPay,Isi Saldo GoPay 500K,500000,500000,1000,1500,Active,ic-prd-gopay.png
-OVO001,OVO 10K,E-Wallet,OVO,Isi Saldo OVO 10K,10000,10000,1000,1500,Active,ic-prd-ovo.png
-OVO002,OVO 25K,E-Wallet,OVO,Isi Saldo OVO 25K,25000,25000,1000,1500,Active,ic-prd-ovo.png
-OVO003,OVO 50K,E-Wallet,OVO,Isi Saldo OVO 50K,50000,50000,1000,1500,Active,ic-prd-ovo.png
-OVO004,OVO 100K,E-Wallet,OVO,Isi Saldo OVO 100K,100000,100000,1000,1500,Active,ic-prd-ovo.png
-OVO005,OVO 500K,E-Wallet,OVO,Isi Saldo OVO 500K,500000,500000,1000,1500,Active,ic-prd-ovo.png
-DANA001,DANA 10K,E-Wallet,DANA,Isi Saldo DANA 10K,10000,10000,1000,1500,Active,ic-prd-dana.png
-DANA002,DANA 25K,E-Wallet,DANA,Isi Saldo DANA 25K,25000,25000,1000,1500,Active,ic-prd-dana.png
-DANA003,DANA 50K,E-Wallet,DANA,Isi Saldo DANA 50K,50000,50000,1000,1500,Active,ic-prd-dana.png
-DANA004,DANA 100K,E-Wallet,DANA,Isi Saldo DANA 100K,100000,100000,1000,1500,Active,ic-prd-dana.png
-DANA005,DANA 500K,E-Wallet,DANA,Isi Saldo DANA 500K,500000,500000,1000,1500,Active,ic-prd-dana.png
-SHOPEEP01,ShopeePay 10K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 10K,10000,10000,1000,1500,Active,ic-prd-spay.png
-SHOPEEP02,ShopeePay 25K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 25K,25000,25000,1000,1500,Active,ic-prd-spay.png
-SHOPEEP03,ShopeePay 50K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 50K,50000,50000,1000,1500,Active,ic-prd-spay.png
-SHOPEEP04,ShopeePay 100K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 100K,100000,100000,1000,1500,Active,ic-prd-spay.png
-SHOPEEP05,ShopeePay 500K,E-Wallet,ShopeePay,Isi Saldo ShopeePay 500K,500000,500000,1000,1500,Active,ic-prd-spay.png
-LINKAJA01,LinkAja 10K,E-Wallet,LinkAja,Isi Saldo LinkAja 10K,10000,10000,1000,1500,Active,ic-prd-linkaja.png
-LINKAJA02,LinkAja 25K,E-Wallet,LinkAja,Isi Saldo LinkAja 25K,25000,25000,1000,1500,Active,ic-prd-linkaja.png
-LINKAJA03,LinkAja 50K,E-Wallet,LinkAja,Isi Saldo LinkAja 50K,50000,50000,1000,1500,Active,ic-prd-linkaja.png
-LINKAJA04,LinkAja 100K,E-Wallet,LinkAja,Isi Saldo LinkAja 100K,100000,100000,1000,1500,Active,ic-prd-linkaja.png
-LINKAJA05,LinkAja 500K,E-Wallet,LinkAja,Isi Saldo LinkAja 500K,500000,500000,1000,1500,Active,ic-prd-linkaja.png
 TOKEN01,Token PLN 20K,PLN,PLN,Token Listrik PLN 20K,20000,20000,2500,5000,Active,ic-prd-pln.png
 TOKEN02,Token PLN 50K,PLN,PLN,Token Listrik PLN 50K,50000,50000,2500,5000,Active,ic-prd-pln.png
 TOKEN03,Token PLN 100K,PLN,PLN,Token Listrik PLN 100K,100000,100000,2500,5000,Active,ic-prd-pln.png
 TOKEN04,Token PLN 200K,PLN,PLN,Token Listrik PLN 200K,200000,200000,2500,5000,Active,ic-prd-pln.png
 TOKEN05,Token PLN 500K,PLN,PLN,Token Listrik PLN 500K,500000,500000,2500,5000,Active,ic-prd-pln.png
 TOKEN06,Token PLN 1M,PLN,PLN,Token Listrik PLN 1M,1000000,1000000,2500,5000,Active,ic-prd-pln.png
-PAJAK01,Pajak Kendaraan,Pajak,Pajak,Tagihan Pajak Kendaraan,50000,5000000,3000,5000,Active,ic-prd-pajak.png
-PAJAK02,Pajak Bumi dan Bangunan,Pajak,Pajak,Tagihan PBB,100000,10000000,3000,5000,Active,ic-prd-pajak.png
-PAJAK03,Pajak Penghasilan,Pajak,Pajak,Tagihan Pajak Penghasilan,100000,10000000,3000,5000,Active,ic-prd-pajak.png
+PLNPSD02,PLN Pascabayar 2,PLN,PLN,Tagihan Listrik Pascabayar 2,50000,1000000,2500,5000,Active,ic-prd-pln.png
+TOKEN07,Token PLN 10M,PLN,PLN,Token Listrik PLN 10M,10000000,10000000,2500,5000,Active,ic-prd-pln.png
+TOKEN08,Token PLN 15M,PLN,PLN,Token Listrik PLN 15M,15000000,15000000,2500,5000,Active,ic-prd-pln.png
+TOKEN09,Token PLN 20M,PLN,PLN,Token Listrik PLN 20M,20000000,20000000,2500,5000,Active,ic-prd-pln.png
 ASURANSI01,Asuransi Prudential,Asuransi,Asuransi,Tagihan Asuransi Prudential,50000,5000000,2500,3000,Active,ic-prd-prudential.png
 ASURANSI02,Asuransi Manulife,Asuransi,Asuransi,Tagihan Asuransi Manulife,50000,5000000,2500,3000,Active,ic-prd-manulife.png
 ASURANSI03,Asuransi Allianz,Asuransi,Asuransi,Tagihan Asuransi Allianz,50000,5000000,2500,3000,Active,ic-prd-allianz.png
-INTERNET01,Indihome,Internet,Internet,Tagihan Internet Indihome,100000,1000000,2000,4000,Active,ic-prd-indihome.png
-INTERNET02,MyRepublic,Internet,Internet,Tagihan Internet MyRepublic,100000,1000000,2000,4000,Active,ic-prd-myrepublic.png
-INTERNET03,First Media,Internet,Internet,Tagihan Internet First Media,100000,1000000,2000,4000,Active,ic-prd-firstmedia.png
-INTERNET04,CBN,Internet,Internet,Tagihan Internet CBN,100000,1000000,2000,4000,Active,ic-prd-transvision.png
-INTERNET05,XL Home,Internet,Internet,Tagihan Internet XL Home,100000,1000000,2000,4000,Active,ic-prd-xl.png
-PULSA17,Pulsa Indosat 5K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 5K,5000,5000,1500,2000,Active,ic-prd-indosat.png
-PULSA18,Pulsa Telkomsel 5K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 5K,5000,5000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA19,Pulsa XL 5K,Pulsa,XL,Isi Ulang Pulsa XL 5K,5000,5000,1500,2000,Active,ic-prd-xl.png
-PULSA20,Pulsa Tri 5K,Pulsa,TRI,Isi Ulang Pulsa Tri 5K,5000,5000,1500,2000,Active,ic-prd-tri.png
-PULSA21,Pulsa Smartfren 5K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 5K,5000,5000,1500,2000,Active,ic-prd-smartfren.png
-PULSA22,Pulsa Indosat 15K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 15K,15000,15000,1500,2000,Active,ic-prd-indosat.png
-PULSA23,Pulsa Telkomsel 15K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 15K,15000,15000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA24,Pulsa XL 15K,Pulsa,XL,Isi Ulang Pulsa XL 15K,15000,15000,1500,2000,Active,ic-prd-xl.png
-PULSA25,Pulsa Tri 15K,Pulsa,TRI,Isi Ulang Pulsa Tri 15K,15000,15000,1500,2000,Active,ic-prd-tri.png
-PULSA26,Pulsa Smartfren 15K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 15K,15000,15000,1500,2000,Active,ic-prd-smartfren.png
-PULSA27,Pulsa Indosat 30K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 30K,30000,30000,1500,2000,Active,ic-prd-indosat.png
-PULSA28,Pulsa Telkomsel 30K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 30K,30000,30000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA29,Pulsa XL 30K,Pulsa,XL,Isi Ulang Pulsa XL 30K,30000,30000,1500,2000,Active,ic-prd-xl.png
-PULSA30,Pulsa Tri 30K,Pulsa,TRI,Isi Ulang Pulsa Tri 30K,30000,30000,1500,2000,Active,ic-prd-tri.png
-PULSA31,Pulsa Smartfren 30K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 30K,30000,30000,1500,2000,Active,ic-prd-smartfren.png
-PULSA32,Pulsa Indosat 75K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 75K,75000,75000,1500,2000,Active,ic-prd-indosat.png
-PULSA33,Pulsa Telkomsel 75K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 75K,75000,75000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA34,Pulsa XL 75K,Pulsa,XL,Isi Ulang Pulsa XL 75K,75000,75000,1500,2000,Active,ic-prd-xl.png
-PULSA35,Pulsa Tri 75K,Pulsa,TRI,Isi Ulang Pulsa Tri 75K,75000,75000,1500,2000,Active,ic-prd-tri.png
-PULSA36,Pulsa Smartfren 75K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 75K,75000,75000,1500,2000,Active,ic-prd-smartfren.png
-PULSA37,Pulsa Indosat 150K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 150K,150000,150000,1500,2000,Active,ic-prd-indosat.png
-PULSA38,Pulsa Telkomsel 150K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 150K,150000,150000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA39,Pulsa XL 150K,Pulsa,XL,Isi Ulang Pulsa XL 150K,150000,150000,1500,2000,Active,ic-prd-xl.png
-PULSA40,Pulsa Tri 150K,Pulsa,TRI,Isi Ulang Pulsa Tri 150K,150000,150000,1500,2000,Active,ic-prd-tri.png
-PULSA41,Pulsa Smartfren 150K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 150K,150000,150000,1500,2000,Active,ic-prd-smartfren.png
-PULSA42,Pulsa Indosat 300K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 300K,300000,300000,1500,2000,Active,ic-prd-indosat.png
-PULSA43,Pulsa Telkomsel 300K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 300K,300000,300000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA44,Pulsa XL 300K,Pulsa,XL,Isi Ulang Pulsa XL 300K,300000,300000,1500,2000,Active,ic-prd-xl.png
-PULSA45,Pulsa Tri 300K,Pulsa,TRI,Isi Ulang Pulsa Tri 300K,300000,300000,1500,2000,Active,ic-prd-tri.png
-PULSA46,Pulsa Smartfren 300K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 300K,300000,300000,1500,2000,Active,ic-prd-smartfren.png
-PULSA47,Pulsa Indosat 500K,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 500K,500000,500000,1500,2000,Active,ic-prd-indosat.png
-PULSA48,Pulsa Telkomsel 500K,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 500K,500000,500000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA49,Pulsa XL 500K,Pulsa,XL,Isi Ulang Pulsa XL 500K,500000,500000,1500,2000,Active,ic-prd-xl.png
-PULSA50,Pulsa Tri 500K,Pulsa,TRI,Isi Ulang Pulsa Tri 500K,500000,500000,1500,2000,Active,ic-prd-tri.png
-PULSA51,Pulsa Smartfren 500K,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 500K,500000,500000,1500,2000,Active,ic-prd-smartfren.png
-PLNPSD02,PLN Pascabayar 2,PLN,PLN,Tagihan Listrik Pascabayar 2,50000,1000000,2500,5000,Active,ic-prd-pln.png
-PDAM004,PDAM Tangerang,PDAM,PDAM,Tagihan Air PDAM Tangerang,10000,500000,2000,3000,Active,ic-prd-pdam.png
-PDAM005,PDAM Bekasi,PDAM,PDAM,Tagihan Air PDAM Bekasi,10000,500000,2000,3000,Active,ic-prd-pdam.png
-PDAM006,PDAM Medan,PDAM,PDAM,Tagihan Air PDAM Medan,10000,500000,2000,3000,Active,ic-prd-pdam.png
-PDAM007,PDAM Palembang,PDAM,PDAM,Tagihan Air PDAM Palembang,10000,500000,2000,3000,Active,ic-prd-pdam.png
-PDAM008,PDAM Makassar,PDAM,PDAM,Tagihan Air PDAM Makassar,10000,500000,2000,3000,Active,ic-prd-pdam.png
-TELP005,Telkom Flexi,Telkom,Telkom,Tagihan Telepon Flexi,20000,500000,1500,3000,Active,ic-prd-telkom.png
-TELP006,Telkom Speedy,Telkom,Telkom,Tagihan Speedy,20000,500000,1500,3000,Active,ic-prd-telkom.png
-TELP007,Telkom IndiHome,Telkom,Telkom,Tagihan IndiHome,20000,500000,1500,3000,Active,ic-prd-telkom.png
-TVKBL07,MNC Play,TV Kabel,TV Kabel,Tagihan TV Kabel MNC Play,50000,500000,2000,4000,Active,ic-prd-mnc.png
-TVKBL08,Big TV,TV Kabel,TV Kabel,Tagihan TV Kabel Big TV,50000,500000,2000,4000,Active,ic-prd-mnc.png
-TVKBL09,Centratama,TV Kabel,TV Kabel,Tagihan TV Kabel Centratama,50000,500000,2000,4000,Active,ic-prd-mnc.png
-TVKBL10,Viva Sky,TV Kabel,TV Kabel,Tagihan TV Kabel Viva Sky,50000,500000,2000,4000,Active,ic-prd-mnc.png
-TVKBL11,Biznet,TV Kabel,TV Kabel,Tagihan TV Kabel Biznet,50000,500000,2000,4000,Active,ic-prd-biznet.png
+ASURANSI04,Asuransi AIA,Asuransi,Asuransi,Tagihan Asuransi AIA,50000,5000000,2500,3000,Active,ic-prd-aia.png
+ASURANSI05,Asuransi AXA,Asuransi,Asuransi,Tagihan Asuransi AXA,50000,5000000,2500,3000,Active,ic-prd-axa.png
+BPJS001,BPJS Kesehatan,BPJS,BPJS,Tagihan BPJS Kesehatan,25000,1000000,2500,3000,Active,ic-prd-bpjs-kes.png
+BPJS002,BPJS Ketenagakerjaan,BPJS,BPJS,Tagihan BPJS Ketenagakerjaan,25000,1000000,2500,3000,Active,ic-prd-pbjs-ket.png
 BPJS003,BPJS Pendidikan,BPJS,BPJS,Tagihan BPJS Pendidikan,25000,1000000,2500,3000,Active,ic-prd-bpjs.png
 BPJS004,BPJS Perbankan,BPJS,BPJS,Tagihan BPJS Perbankan,25000,1000000,2500,3000,Active,ic-prd-bpjs.png
 BPJS005,BPJS Transportasi,BPJS,BPJS,Tagihan BPJS Transportasi,25000,1000000,2500,3000,Active,ic-prd-bpjs.png
+FINR001,Angsuran Adira,Finance,Finance,Angsuran Kredit Adira,50000,1000000,3000,5000,Active,ic-prd-adira.png
+FINR002,Angsuran BAF,Finance,Finance,Angsuran Kredit BAF,50000,1000000,3000,5000,Active,ic-prd-baf.png
+FINR003,Angsuran WOM,Finance,Finance,Angsuran Kredit WOM,50000,1000000,3000,5000,Active,ic-prd-wom.png
+FINR004,Angsuran FIF,Finance,Finance,Angsuran Kredit FIF,50000,1000000,3000,5000,Active,ic-prd-fif.png
+FINR005,Angsuran Mega,Finance,Finance,Angsuran Kredit Mega,50000,1000000,3000,5000,Active,ic-prd-fif.png
+FINR006,Angsuran Kredit Plus,Finance,Finance,Angsuran Kredit Plus,50000,1000000,3000,5000,Active,ic-prd-credplus.png
 FINR007,Angsuran Toyota Finance,Finance,Finance,Angsuran Kredit Toyota Finance,50000,1000000,3000,5000,Active,ic-prd-acc.png
 FINR008,Angsuran Suzuki Finance,Finance,Finance,Angsuran Kredit Suzuki Finance,50000,1000000,3000,5000,Active,ic-prd-acc.png
 FINR009,Angsuran Honda Finance,Finance,Finance,Angsuran Kredit Honda Finance,50000,1000000,3000,5000,Active,ic-prd-acc.png
 FINR010,Angsuran Yamaha Finance,Finance,Finance,Angsuran Kredit Yamaha Finance,50000,1000000,3000,5000,Active,ic-prd-acc.png
 FINR011,Angsuran Astra Finance,Finance,Finance,Angsuran Kredit Astra Finance,50000,1000000,3000,5000,Active,ic-prd-acc.png
 FINR012,Angsuran Mandiri Finance,Finance,Finance,Angsuran Kredit Mandiri Finance,50000,1000000,3000,5000,Active,ic-prd-acc.png
-GOPAY06,GoPay 1M,E-Wallet,GoPay,Isi Saldo GoPay 1M,1000000,1000000,1000,1500,Active,ic-prd-gopay.png
-OVO006,OVO 1M,E-Wallet,OVO,Isi Saldo OVO 1M,1000000,1000000,1000,1500,Active,ic-prd-ovo.png
-DANA006,DANA 1M,E-Wallet,DANA,Isi Saldo DANA 1M,1000000,1000000,1000,1500,Active,ic-prd-dana.png
-SHOPEEP06,ShopeePay 1M,E-Wallet,ShopeePay,Isi Saldo ShopeePay 1M,1000000,1000000,1000,1500,Active,ic-prd-spay.png
-LINKAJA06,LinkAja 1M,E-Wallet,LinkAja,Isi Saldo LinkAja 1M,1000000,1000000,1000,1500,Active,ic-prd-linkaja.png
-TOKEN07,Token PLN 10M,PLN,PLN,Token Listrik PLN 10M,10000000,10000000,2500,5000,Active,ic-prd-pln.png
-TOKEN08,Token PLN 15M,PLN,PLN,Token Listrik PLN 15M,15000000,15000000,2500,5000,Active,ic-prd-pln.png
-TOKEN09,Token PLN 20M,PLN,PLN,Token Listrik PLN 20M,20000000,20000000,2500,5000,Active,ic-prd-pln.png
+INTERNET01,Indihome,Internet,Internet,Tagihan Internet Indihome,100000,1000000,2000,4000,Active,ic-prd-indihome.png
+INTERNET02,MyRepublic,Internet,Internet,Tagihan Internet MyRepublic,100000,1000000,2000,4000,Active,ic-prd-myrepublic.png
+INTERNET03,First Media,Internet,Internet,Tagihan Internet First Media,100000,1000000,2000,4000,Active,ic-prd-firstmedia.png
+INTERNET04,CBN,Internet,Internet,Tagihan Internet CBN,100000,1000000,2000,4000,Active,ic-prd-transvision.png
+INTERNET05,XL Home,Internet,Internet,Tagihan Internet XL Home,100000,1000000,2000,4000,Active,ic-prd-xl.png
+INTERNET07,Indosat GIG,Internet,Internet,Tagihan Internet Indosat GIG,100000,1000000,2000,4000,Active,ic-prd-indosat.png
+INTERNET08,Orbit Telkomsel,Internet,Internet,Tagihan Internet Orbit Telkomsel,100000,1000000,2000,4000,Active,ic-prd-orbit.png
+PDAM001,PDAM Jakarta,PDAM,PDAM,Tagihan Air PDAM Jakarta,10000,500000,2000,3000,Active,ic-prd-pdam.png
+PDAM002,PDAM Bandung,PDAM,PDAM,Tagihan Air PDAM Bandung,10000,500000,2000,3000,Active,ic-prd-pdam.png
+PDAM003,PDAM Surabaya,PDAM,PDAM,Tagihan Air PDAM Surabaya,10000,500000,2000,3000,Active,ic-prd-pdam.png
+PDAM004,PDAM Tangerang,PDAM,PDAM,Tagihan Air PDAM Tangerang,10000,500000,2000,3000,Active,ic-prd-pdam.png
+PDAM005,PDAM Bekasi,PDAM,PDAM,Tagihan Air PDAM Bekasi,10000,500000,2000,3000,Active,ic-prd-pdam.png
+PDAM006,PDAM Medan,PDAM,PDAM,Tagihan Air PDAM Medan,10000,500000,2000,3000,Active,ic-prd-pdam.png
+PDAM007,PDAM Palembang,PDAM,PDAM,Tagihan Air PDAM Palembang,10000,500000,2000,3000,Active,ic-prd-pdam.png
+PDAM008,PDAM Makassar,PDAM,PDAM,Tagihan Air PDAM Makassar,10000,500000,2000,3000,Active,ic-prd-pdam.png
+PAJAK01,Pajak Kendaraan,Pajak,Pajak,Tagihan Pajak Kendaraan,50000,5000000,3000,5000,Active,ic-prd-pajak.png
+PAJAK02,Pajak Bumi dan Bangunan,Pajak,Pajak,Tagihan PBB,100000,10000000,3000,5000,Active,ic-prd-pajak.png
+PAJAK03,Pajak Penghasilan,Pajak,Pajak,Tagihan Pajak Penghasilan,100000,10000000,3000,5000,Active,ic-prd-pajak.png
 PAJAK04,Pajak Parkir,Pajak,Pajak,Tagihan Pajak Parkir,50000,500000,3000,5000,Active,ic-prd-pajak.png
 PAJAK05,Pajak Reklame,Pajak,Pajak,Tagihan Pajak Reklame,100000,1000000,3000,5000,Active,ic-prd-pajak.png
 PAJAK06,Pajak Air Tanah,Pajak,Pajak,Tagihan Pajak Air Tanah,100000,1000000,3000,5000,Active,ic-prd-pajak.png
-ASURANSI04,Asuransi AIA,Asuransi,Asuransi,Tagihan Asuransi AIA,50000,5000000,2500,3000,Active,ic-prd-aia.png
-ASURANSI05,Asuransi AXA,Asuransi,Asuransi,Tagihan Asuransi AXA,50000,5000000,2500,3000,Active,ic-prd-axa.png
-INTERNET07,Indosat GIG,Internet,Internet,Tagihan Internet Indosat GIG,100000,1000000,2000,4000,Active,ic-prd-indosat.png
-INTERNET08,Orbit Telkomsel,Internet,Internet,Tagihan Internet Orbit Telkomsel,100000,1000000,2000,4000,Active,ic-prd-orbit.png
-PULSA52,Pulsa Indosat 1M,Pulsa,INDOSAT,Isi Ulang Pulsa Indosat 1M,1000000,1000000,1500,2000,Active,ic-prd-indosat.png
-PULSA53,Pulsa Telkomsel 1M,Pulsa,TELKOMSEL,Isi Ulang Pulsa Telkomsel 1M,1000000,1000000,1500,2000,Active,ic-prd-telkomsel.png
-PULSA54,Pulsa XL 1M,Pulsa,XL,Isi Ulang Pulsa XL 1M,1000000,1000000,1500,2000,Active,ic-prd-xl.png
-PULSA55,Pulsa Tri 1M,Pulsa,TRI,Isi Ulang Pulsa Tri 1M,1000000,1000000,1500,2000,Active,ic-prd-tri.png
-PULSA56,Pulsa Smartfren 1M,Pulsa,SMARTFREN,Isi Ulang Pulsa Smartfren 1M,1000000,1000000,1500,2000,Active,ic-prd-smartfren.png
+TVKBL01,Nex Parabola,TV Kabel,TV Kabel,Tagihan TV Kabel Nex Parabola,50000,500000,2000,4000,Active,ic-prd-nex.png
+TVKBL02,Transvision,TV Kabel,TV Kabel,Tagihan TV Kabel Transvision,50000,500000,2000,4000,Active,ic-prd-transvision.png
+TVKBL03,First Media,TV Kabel,TV Kabel,Tagihan TV Kabel First Media,50000,500000,2000,4000,Active,ic-prd-firstmedia.png
+TVKBL04,MyRepublic,TV Kabel,TV Kabel,Tagihan TV Kabel MyRepublic,50000,500000,2000,4000,Active,ic-prd-myrepublic.png
+TVKBL05,Indihome TV,TV Kabel,TV Kabel,Tagihan Indihome TV,50000,500000,2000,4000,Active,ic-prd-indihome.png
+TVKBL06,K Vision,TV Kabel,TV Kabel,Tagihan TV Kabel K Vision,50000,500000,2000,4000,Active,ic-prd-indihome.png
+TVKBL07,MNC Play,TV Kabel,TV Kabel,Tagihan TV Kabel MNC Play,50000,500000,2000,4000,Active,ic-prd-mnc.png
+TVKBL08,Big TV,TV Kabel,TV Kabel,Tagihan TV Kabel Big TV,50000,500000,2000,4000,Active,ic-prd-mnc.png
+TVKBL09,Centratama,TV Kabel,TV Kabel,Tagihan TV Kabel Centratama,50000,500000,2000,4000,Active,ic-prd-mnc.png
+TVKBL10,Viva Sky,TV Kabel,TV Kabel,Tagihan TV Kabel Viva Sky,50000,500000,2000,4000,Active,ic-prd-mnc.png
+TVKBL11,Biznet,TV Kabel,TV Kabel,Tagihan TV Kabel Biznet,50000,500000,2000,4000,Active,ic-prd-biznet.png
+TELP001,Telkom Rumah,Telkom,Telkom,Tagihan Telepon Rumah,20000,500000,1500,3000,Active,ic-prd-telkom.png
+TELP002,Telkomsel Pascabayar,Telkom,Telkom,Tagihan Telkomsel Pascabayar,20000,1000000,1500,3000,Active,ic-prd-telkomsel-prabayar.png
+TELP003,Indosat Pascabayar,Telkom,Telkom,Tagihan Indosat Pascabayar,20000,1000000,1500,3000,Active,ic-prd-indosat.png
+TELP004,XL Pascabayar,Telkom,Telkom,Tagihan XL Pascabayar,20000,1000000,1500,3000,Active,ic-prd-xl.png
+TELP005,Telkom Flexi,Telkom,Telkom,Tagihan Telepon Flexi,20000,500000,1500,3000,Active,ic-prd-telkom.png
+TELP006,Telkom Speedy,Telkom,Telkom,Tagihan Speedy,20000,500000,1500,3000,Active,ic-prd-telkom.png
+TELP007,Telkom IndiHome,Telkom,Telkom,Tagihan IndiHome,20000,500000,1500,3000,Active,ic-prd-telkom.png

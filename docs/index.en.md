@@ -17,8 +17,9 @@ insights.
 ## Features
 
 - User authentication with JWT
-- Products list
+- Products list (over 200 product items)
 - Balance and topup
+- QRIS support
 - Simulator Payment for topup balance
 - Product Transaction
 

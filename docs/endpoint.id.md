@@ -14,6 +14,8 @@ https://ppob-fake-api.fly.dev
 
 API Version: `1.0.0`
 
+[<img src="https://run.pstmn.io/button.svg" alt="Run In Postman" style="width: 128px; height: 32px;">](https://god.gw.postman.com/run-collection/3885530-de2e0109-6992-4988-9e3d-065f1f883d76?action=collection%2Ffork&source=rip_markdown&collection-url=entityId%3D3885530-de2e0109-6992-4988-9e3d-065f1f883d76%26entityType%3Dcollection%26workspaceId%3Dad0d5269-cbdb-42dd-b700-ca8adacf882b)
+
 ---
 
 ## User

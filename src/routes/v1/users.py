@@ -62,7 +62,7 @@ class UserResources(BaseResources):
             return self.create_response(
                 message=message,
                 data={
-                    'token': f'Bearer {token}'
+                    'token': token
                 },
                 status=True
             )

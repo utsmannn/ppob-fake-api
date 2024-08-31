@@ -1,5 +1,6 @@
 category,subcategory,icon_name
 Pulsa,INDOSAT|TELKOMSEL|XL|TRI|SMARTFREN,ic-cat-pulsa.png
+Data,INDOSAT|TELKOMSEL|XL|TRI|SMARTFREN,ic-cat-data.png
 Internet,Internet,ic-cat-internet.png
 E-Wallet,GoPay|OVO|DANA|LinkAja,ic-cat-e-wallet.png
 PLN,PLN,ic-cat-pln.png

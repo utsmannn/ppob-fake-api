@@ -12,18 +12,18 @@ theme:
     - content.code.annotate
     - navigation.tabs
   palette:
-    - scheme: slate
-      primary: light green
-      accent: teal
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-    - scheme: default
-      primary: light green
-      accent: teal
+    - media: "(prefers-color-scheme: dark)"
+      primary: amber
+      scheme: slate
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+    - media: "(prefers-color-scheme: light)"
+      primary: amber
+      scheme: default
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
 plugins:
   - search
