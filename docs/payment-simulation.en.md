@@ -37,7 +37,7 @@ complete the simulation:
     After the simulated payment is completed, the page will redirect to a blank page with the message "Thank you for your
     payment".
 
-   ![SCR-20240830-ujbl.png](images/SCR-20240830-ujbl.png)
+    ![SCR-20240830-ujbl.png](images/SCR-20240830-ujbl.png)
 
 === "Check Account Balance and Invoice Status"
 

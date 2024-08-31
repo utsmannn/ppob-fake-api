@@ -6,6 +6,7 @@
 - [x] Get user
 - [x] Get product
 - [x] Get category
+- [x] QRIS parser
 - [x] Transaction
 - [x] Cloud mongo implementation
 - [x] Balance

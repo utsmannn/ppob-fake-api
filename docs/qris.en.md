@@ -2,7 +2,7 @@
 title: QRIS Information
 ---
 
-Before you make a transaction using QRIS on the <span style="color:#C75151">**POST**</span> **`/api/v1/transaction/qris`** 
+Before you make a transaction using QRIS on the <span style="color:#C75151">**POST**</span> **`/api/v1/transaction/qris`**
 endpoint,
 Maybe you need to translate the QRIS code into information to be displayed in your application. That's what I'm for
 provides a dedicated endpoint and is independent of versioning `/api/v1/`.
@@ -150,7 +150,25 @@ general QRIS structure and the explanation of each element:
 3. **Parsing**: To parse QRIS, the process involves reading the ID, extracting the data length, and then capturing the
    corresponding data. The data can then be further processed or displayed as needed.
 
-## Parsing Step
+## Parsing
+
+Parsing a QR code from QRIS involves extracting and interpreting the encoded data to retrieve meaningful information.
+The process begins by reading the QR code string and breaking it down into segments. Each segment typically consists of
+an identifier, length, and value.
+
+For example, the first two characters represent the identifier (e.g., "00" for format indicator), followed by two
+characters that define the length of the value, and then the actual value itself. This pattern is repeated throughout
+the entire QR string.
+
+Some segments contain nested data, such as merchant account information, which requires further parsing. In these cases,
+the value of the segment is broken down similarly into sub-identifiers, lengths, and values.
+
+Once all segments are parsed, the values are mapped to specific attributes in a data structure. This
+structure might include fields like merchant name, city, amount, and additional information.
+
+Finally, the parsed data is validated by checking specific fields, such as verifying the QRIS provider. If the data is
+valid, it can then be used for processing payments or other relevant actions. This structured approach ensures that all
+necessary information is correctly extracted and interpreted.
 
 ### Pseudo Code Explanation
 
@@ -237,20 +255,25 @@ function parse_qris(input_string: str) -> Optional[QrisData]:
 
 ### QRIS Example:
 
+![qris.png](images/qris.png)
+
 Here's a step-by-step explanation for processing the given QRIS code:
 
 Given QRIS input:
+
 ```
 00020101021126550016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE51440014ID.CO.QRIS.WWW0215ID20190022915550303UBE5204839853033605802ID5906Baznas6013Jakarta Pusat61051034062070703A016304A402
 ```
 
 ### 1. Start with `parse_qris`:
+
 - **Index** starts at `0`.
 - **Result** is an empty dictionary.
 
 ### 2. Processing QRIS step by step:
 
 #### Iteration 1:
+
 - **qr_id**: `00` (from index `0-2`)
 - **qr_id_length**: `02` (from index `2-4`)
 - **qr_id_value_length**: `2`
@@ -260,6 +283,7 @@ Given QRIS input:
 - **Index** is now `6`.
 
 #### Iteration 2:
+
 - **qr_id**: `01`
 - **qr_id_length**: `02`
 - **qr_id_value_length**: `2`
@@ -269,6 +293,7 @@ Given QRIS input:
 - **Index** is now `10`.
 
 #### Iteration 3:
+
 - **qr_id**: `26` (Merchant Account)
 - **qr_id_length**: `55`
 - **qr_id_value_length**: `55`
@@ -282,7 +307,8 @@ Given QRIS input:
 - **nqi**: `00`
 - **nqi_length**: `16`
 - **nqi_value**: `ID.CO.SHOPEE.WWW`
-- **Result**: `{"00": "01", "01": "11", "26": "0016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE", "26-00": "ID.CO.SHOPEE.WWW"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26": "0016ID.CO.SHOPEE.WWW01189360091800000000180202180303UBE", "26-00": "ID.CO.SHOPEE.WWW"}`
 
 - **nqi**: `01`
 - **nqi_length**: `18`
@@ -297,14 +323,17 @@ Given QRIS input:
 - **nqi**: `03`
 - **nqi_length**: `03`
 - **nqi_value**: `UBE`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE"}`
 
 #### Iteration 4:
+
 - **qr_id**: `51` (Merchant Account 2)
 - **qr_id_length**: `44`
 - **qr_id_value_length**: `44`
 - **qr_id_value**: `0014ID.CO.QRIS.WWW0215ID20190022915550303UBE`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51": "0014ID.CO.QRIS.WWW0215ID20190022915550303UBE"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51": "0014ID.CO.QRIS.WWW0215ID20190022915550303UBE"}`
 
 - **Index** is now `117`.
 
@@ -313,103 +342,127 @@ Given QRIS input:
 - **nqi**: `00`
 - **nqi_length**: `14`
 - **nqi_value**: `ID.CO.QRIS.WWW`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW"}`
 
 - **nqi**: `02`
 - **nqi_length**: `15`
 - **nqi_value**: `ID2019002291555`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555"}`
 
 - **nqi**: `03`
 - **nqi_length**: `03`
 - **nqi_value**: `UBE`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE"}`
 
 #### Iteration 5:
+
 - **qr_id**: `52`
 - **qr_id_length**: `04`
 - **qr_id_value_length**: `4`
 - **qr_id_value**: `8398`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398"}`
 
 - **Index** is now `127`.
 
 #### Iteration 6:
+
 - **qr_id**: `53`
 - **qr_id_length**: `03`
 - **qr_id_value_length**: `3`
 - **qr_id_value**: `360`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360"}`
 
 - **Index** is now `134`.
 
 #### Iteration 7:
+
 - **qr_id**: `58`
 - **qr_id_length**: `02`
 - **qr_id_value_length**: `2`
 - **qr_id_value**: `ID`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID"}`
 
 - **Index** is now `138`.
 
 #### Iteration 8:
+
 - **qr_id**: `59`
 - **qr_id_length**: `06`
 - **qr_id_value_length**: `6`
 - **qr_id_value**: `Baznas`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas"}`
 
 - **Index** is now `148`.
 
 #### Iteration 9:
+
 - **qr_id**: `60`
 
 
 - **qr_id_length**: `13`
 - **qr_id_value_length**: `13`
 - **qr_id_value**: `Jakarta Pusat`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat"}`
 
 - **Index** is now `165`.
 
 #### Iteration 10:
+
 - **qr_id**: `61`
 - **qr_id_length**: `05`
 - **qr_id_value_length**: `5`
 - **qr_id_value**: `10340`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340"}`
 
 - **Index** is now `174`.
 
 #### Iteration 11:
+
 - **qr_id**: `62` (Additional Info)
 - **qr_id_length**: `07`
 - **qr_id_value_length**: `7`
 - **qr_id_value**: `03A0163`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62": "03A0163"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62": "03A0163"}`
 
 - **Index** is now `183`.
 
 #### Iteration 12:
+
 - **qr_id**: `63`
 - **qr_id_length**: `04`
 - **qr_id_value_length**: `4`
 - **qr_id_value**: `A402`
-- **Result**: `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62-07": "03A0163", "63": "A402"}`
+- **Result**:
+  `{"00": "01", "01": "11", "26-00": "ID.CO.SHOPEE.WWW", "26-01": "936009180000000018", "26-02": "18", "26-03": "UBE", "51-00": "ID.CO.QRIS.WWW", "51-02": "ID2019002291555", "51-03": "UBE", "52": "8398", "53": "360", "58": "ID", "59": "Baznas", "60": "Jakarta Pusat", "61": "10340", "62-07": "03A0163", "63": "A402"}`
 
 - **Index** is now `191`, which is the end of the input string.
 
 ### 3. Call `qris_processor`
+
 - After all data is parsed, `qris_processor` maps the data from `Result` to the attributes in `QrisData`.
 - **Raw** in `qris_data` is set with the `input_string`.
 
 ### 4. Validate QRIS:
+
 - Check if `merchant_account_2.identifier` is equal to `'ID.CO.QRIS.WWW'`.
 - If true, return `qris_data`.
 - If false, return `None`.
 
 ### 5. Final Output
-- Based on the example, the QRIS data is valid, and the processed `qris_data` will be returned, containing complete information such as `merchant_name` (`Baznas`), `merchant_city` (`Jakarta Pusat`), `amount`, and others according to the parsed result.
+
+- Based on the example, the QRIS data is valid, and the processed `qris_data` will be returned, containing complete
+  information such as `merchant_name` (`Baznas`), `merchant_city` (`Jakarta Pusat`), `amount`, and others according to
+  the parsed result.
 
 ---
 

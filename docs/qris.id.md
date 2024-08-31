@@ -152,8 +152,24 @@ Berikut adalah struktur umum QRIS dan penjelasan dari masing-masing elemennya:
 3. **Parsing**: Untuk memparsing QRIS, prosesnya melibatkan pembacaan ID, mengekstrak panjang data, dan kemudian
    mengambil data yang sesuai. Data kemudian dapat diproses lebih lanjut atau ditampilkan sesuai kebutuhan.
 
+## Parsing
 
-## Langkah-langkah Parsing
+Memparsing kode QR dari QRIS melibatkan ekstraksi dan interpretasi data yang terenkode untuk mendapatkan informasi yang
+bermakna. Proses ini dimulai dengan membaca string kode QR dan memecahnya menjadi segmen-segmen. Setiap segmen biasanya
+terdiri dari pengidentifikasi, panjang, dan nilai.
+
+Sebagai contoh, dua karakter pertama mewakili pengidentifikasi (misalnya, "00" untuk format indikator), diikuti oleh dua
+karakter yang mendefinisikan panjang nilai, dan kemudian nilai itu sendiri. Pola ini diulangi di seluruh string QR.
+
+Beberapa segmen mengandung data yang nested, seperti informasi akun merchant, yang memerlukan pemrosesan lebih lanjut.
+Dalam kasus ini, nilai segmen dipecah kembali menjadi sub-identifikasi, panjang, dan nilai.
+
+Setelah semua segmen diparsing, nilainya dipetakan ke atribut spesifik dalam struktur data. Struktur
+ini mungkin mencakup bidang seperti nama merchant, kota, jumlah, dan informasi tambahan.
+
+Akhirnya, data yang diparsing divalidasi dengan memeriksa bidang tertentu, seperti memverifikasi penyedia QRIS. Jika
+data valid, maka dapat digunakan untuk memproses pembayaran atau tindakan terkait lainnya. Pendekatan terstruktur ini
+memastikan bahwa semua informasi yang diperlukan diekstraksi dan diinterpretasikan dengan benar.
 
 ### Pseudo Code Explanation
 

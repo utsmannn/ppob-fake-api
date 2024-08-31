@@ -33,7 +33,7 @@ def url_basic_auth(url: str):
 def request_invoice_balance(user, amount):
     external_id = f'{uuid.uuid4()}'.split('-')[-1]
 
-    redirect_url = f'http://127.0.0.1:8080/api/v1/topup_direct/{external_id}'
+    redirect_url = f'https://ppob-fake-api.fly.dev/api/v1/topup_direct/{external_id}'
 
     json_request = {
         'external_id': f'{external_id}',

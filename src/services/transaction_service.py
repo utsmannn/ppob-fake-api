@@ -2,7 +2,6 @@ import random
 import uuid
 from datetime import datetime
 
-from mergedeep import merge
 from werkzeug.security import check_password_hash
 
 from src.models import User, PrepaidAccountTransaction, Transaction, MerchantAccount
