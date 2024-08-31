@@ -6,7 +6,7 @@ from typing import Optional
 
 class ProductRawCsv:
     def __init__(self, _id, code, name, category, sub_category, description, nominal_min, nominal_max, admin_fee,
-                 service_fee, status):
+                 service_fee, status, icon):
         self._id = _id
         self.code = code
         self.name = name
@@ -18,6 +18,7 @@ class ProductRawCsv:
         self.admin_fee = admin_fee
         self.service_fee = service_fee
         self.status = status
+        self.icon = icon
 
     def __repr__(self):
         return f"<Product {self.code}: {self.name}>"
@@ -33,7 +34,24 @@ class ProductRawCsv:
             "nominal": None if self.nominal_min != self.nominal_max else self.nominal_min,
             "admin_fee": self.admin_fee,
             "service_fee": self.service_fee,
-            "status": self.status
+            "status": self.status,
+            "icon": self.icon
+        }
+
+class CategoryRawCsv:
+    def __init__(self, name, icon, subcategories):
+        self.name = name
+        self.icon = icon
+        self.subcategories = subcategories
+
+    def __repr__(self):
+        return f"<Category {self.name}: {self.icon}>"
+
+    def to_dict(self):
+        return {
+            'name': self.name,
+            'icon': self.icon,
+            'subcategories': self.subcategories
         }
 
 

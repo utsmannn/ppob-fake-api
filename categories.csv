@@ -1,0 +1,12 @@
+category,subcategory,icon_name
+Pulsa,INDOSAT|TELKOMSEL|XL|TRI|SMARTFREN,ic-cat-pulsa.png
+Internet,Internet,ic-cat-internet.png
+E-Wallet,GoPay|OVO|DANA|LinkAja,ic-cat-e-wallet.png
+PLN,PLN,ic-cat-pln.png
+PDAM,PDAM,ic-cat-pdam.png
+Telkom,Telkom,ic-cat-telkom.png
+TV Kabel,TV Kabel,ic-cat-tv.png
+BPJS,BPJS,ic-cat-pbjs.png
+Finance,Finance,ic-cat-finance.png
+Pajak,Pajak,ic-cat-pajak.png
+Asuransi,Asuransi,ic-cat-asuransi.png

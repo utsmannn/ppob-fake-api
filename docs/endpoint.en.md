@@ -348,16 +348,23 @@ API Version: `1.0.0`
       "status": true,
       "data": [
         {
-          "category": "PULSA",
-          "sub_category": ["TELKOMSEL", "INDOSAT", "XL"]
+          "name": "Pulsa",
+          "icon": "https://utsmannn.github.io/images/ic-cat-pulsa.png",
+          "subcategories": [
+            "INDOSAT","TELKOMSEL","XL","TRI","SMARTFREN"
+          ]
         },
         {
-          "category": "DATA",
-          "sub_category": ["TELKOMSEL", "INDOSAT", "XL"]
+          "name": "Internet",
+          "icon": "https://utsmannn.github.io/images/ic-cat-internet.png",
+          "subcategories": ["Internet"]
         },
         {
-          "category": "PDAM",
-          "sub_category": ["JAKARTA", "BANDUNG", "SURABAYA"]
+          "name": "E-Wallet",
+          "icon": "https://utsmannn.github.io/images/ic-cat-e-wallet.png",
+          "subcategories": [
+            "GoPay","OVO","DANA","LinkAja"
+          ]
         }
       ]
     }

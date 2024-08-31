@@ -3,30 +3,24 @@ from unicodedata import category
 from flask import request, jsonify
 from flask_restful import Resource, abort
 
-from src.services.product_service import load_products
+from src.services.product_service import load_products, load_categories
 
 
 class BaseResources(Resource):
 
     def __init__(self):
-        self._categories_raw = {}
+        # self._categories_raw = {}
 
         self.all_product = load_products()
         self.base_path = request.path.replace('/api/v1', '')
 
-        for prd in self.all_product:
-            if prd.category not in self._categories_raw:
-                self._categories_raw[prd.category] = []
-            if prd.sub_category not in self._categories_raw[prd.category]:
-                self._categories_raw[prd.category].append(prd.sub_category)
+        # for prd in self.all_product:
+        #     if prd.category not in self._categories_raw:
+        #         self._categories_raw[prd.category] = []
+        #     if prd.sub_category not in self._categories_raw[prd.category]:
+        #         self._categories_raw[prd.category].append(prd.sub_category)
 
-        self.categories = [
-            {
-                'category': category_name,
-                'sub_category': sub_categories_name
-            }
-            for category_name, sub_categories_name in self._categories_raw.items()
-        ]
+        self.categories = load_categories()
 
     def category_arg(self):
         return request.args.get('category', default=None, type=str)
