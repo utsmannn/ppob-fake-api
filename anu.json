@@ -1,0 +1,29 @@
+{
+  "external_id": "askasa",
+  "amount": "100000",
+  "description": "Balance Topup",
+  "invoice_duration": 86400,
+  "customer": {
+    "name": "uhuy",
+    "mobile_number": "huyaa"
+  },
+  "success_redirect_url": "google.com",
+  "failure_redirect_url": "google.com",
+  "currency": "IDR",
+  "items": [
+    {
+      "name": "Saldo",
+      "quantity": 1,
+      "price": "100000"
+    }
+  ],
+  "fees": [
+    {
+      "type": "ADMIN",
+      "value": 0
+    }
+  ],
+  "metadata": {
+    "store": "Jakarta"
+  }
+}

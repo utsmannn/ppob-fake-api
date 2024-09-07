@@ -1,13 +1,13 @@
-category,subcategory,icon_name
-Pulsa,INDOSAT|TELKOMSEL|XL|TRI|SMARTFREN,ic-cat-pulsa.png
-Data,INDOSAT|TELKOMSEL|XL|TRI|SMARTFREN,ic-cat-data.png
-Internet,Internet,ic-cat-internet.png
-E-Wallet,GoPay|OVO|DANA|LinkAja,ic-cat-e-wallet.png
-PLN,PLN,ic-cat-pln.png
-PDAM,PDAM,ic-cat-pdam.png
-Telkom,Telkom,ic-cat-telkom.png
-TV Kabel,TV Kabel,ic-cat-tv.png
-BPJS,BPJS,ic-cat-pbjs.png
-Finance,Finance,ic-cat-finance.png
-Pajak,Pajak,ic-cat-pajak.png
-Asuransi,Asuransi,ic-cat-asuransi.png
+category,subcategory,icon_name,postpaid,prepaid
+Pulsa,INDOSAT|TELKOMSEL|XL|TRI|SMARTFREN,ic-cat-pulsa.png,true,false
+Data,INDOSAT|TELKOMSEL|XL|TRI|SMARTFREN,ic-cat-data.png,true,false
+Internet,Internet,ic-cat-internet.png,false,true
+E-Wallet,GoPay|OVO|DANA|LinkAja,ic-cat-e-wallet.png,true,false
+PLN,PLN,ic-cat-pln.png,true,true
+PDAM,PDAM,ic-cat-pdam.png,false,true
+Telkom,Telkom,ic-cat-telkom.png,false,true
+TV Kabel,TV Kabel,ic-cat-tv.png,false,true
+BPJS,BPJS,ic-cat-pbjs.png,false,true
+Finance,Finance,ic-cat-finance.png,false,true
+Pajak,Pajak,ic-cat-pajak.png,false,true
+Asuransi,Asuransi,ic-cat-asuransi.png,false,true

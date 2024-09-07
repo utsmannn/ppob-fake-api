@@ -43,10 +43,15 @@ def load_categories():
             subcategories_raw = row['subcategory']
             subcategories = subcategories_raw.split('|')
 
+            prepaid = row['prepaid'] == 'true'
+            postpaid = row['postpaid'] == 'true'
+
             prod_category = CategoryRawCsv(
                 name=row['category'],
                 subcategories=subcategories,
-                icon=icon
+                icon=icon,
+                prepaid=prepaid,
+                postpaid=postpaid
             )
 
             categories.append(prod_category)

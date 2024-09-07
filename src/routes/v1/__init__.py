@@ -17,7 +17,7 @@ def root_v1():
     return redirect(url_for('root.rootresources'))
 
 api_v1.add_resource(
-    ProductResources, '/product', '/product/prepaid', '/product/<int:product_id>',
+    ProductResources, '/product', '/product/prepaid', '/product/<product_code>',
     strict_slashes=False
 )
 api_v1.add_resource(

@@ -95,6 +95,8 @@ def request_invoice_balance(user, amount):
 
 
 def get_invoice(_id):
+    get_invoice_from_xendit(_id)
+
     existing_invoice = invoice_collection.find_one({'id': _id})
     if existing_invoice is None:
         return None
@@ -142,3 +144,41 @@ def direct_update_invoice(external_id):
         new_status = updated_status
 
     invoice_collection.update_one({'external_id': external_id}, {'$set': {'status': new_status}}, upsert=True)
+
+def get_invoice_from_xendit(invoice_id):
+    existing_invoice_bson = invoice_collection.find_one({'id': invoice_id})
+    if existing_invoice_bson is None:
+        return None
+
+    existing_invoice = create_invoice_from_bson(existing_invoice_bson)
+    request_invoice_url = url_basic_auth(f'https://api.xendit.co/v2/invoices/{invoice_id}')
+    response = http_client.get(request_invoice_url)
+
+    updated_status = response['status']
+
+    if 'paid_at' in response:
+        last_update_balance = response['paid_at']
+    else:
+        last_update_balance = None
+
+    if updated_status in ['SETTLED', 'PAID']:
+        user_id = existing_invoice.user_id
+        user = get_user(user_id)
+
+        if last_update_balance != user.last_update_balance:
+            current_balance = f'{user.balance}'
+            amount = f'{existing_invoice.amount}'
+            new_balance = int(current_balance) + int(amount)
+
+            user_collection.update_one(
+                {'id': user_id},
+                {'$set': {'balance': new_balance, 'last_update_balance': last_update_balance}}, upsert=True
+            )
+
+        new_status = 'PAID'
+    else:
+        new_status = updated_status
+
+    invoice_collection.update_one({'id': invoice_id}, {'$set': {'status': new_status}}, upsert=True)
+
+    return True

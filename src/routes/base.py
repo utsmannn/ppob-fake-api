@@ -25,6 +25,9 @@ class BaseResources(Resource):
     def category_arg(self):
         return request.args.get('category', default=None, type=str)
 
+    def subcategory_arg(self):
+        return request.args.get('subcategory', default=None, type=str)
+
     def search_arg(self):
         return request.args.get('search', default=None, type=str)
 

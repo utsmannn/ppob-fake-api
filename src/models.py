@@ -39,10 +39,12 @@ class ProductRawCsv:
         }
 
 class CategoryRawCsv:
-    def __init__(self, name, icon, subcategories):
+    def __init__(self, name, icon, subcategories, postpaid, prepaid):
         self.name = name
         self.icon = icon
         self.subcategories = subcategories
+        self.postpaid = postpaid
+        self.prepaid = prepaid
 
     def __repr__(self):
         return f"<Category {self.name}: {self.icon}>"
@@ -51,7 +53,9 @@ class CategoryRawCsv:
         return {
             'name': self.name,
             'icon': self.icon,
-            'subcategories': self.subcategories
+            'subcategories': self.subcategories,
+            'post_paid': self.postpaid,
+            'pre_paid': self.prepaid
         }
 
 

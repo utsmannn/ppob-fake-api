@@ -1,11 +1,13 @@
+from unicodedata import category
+
 from src.routes.base import BaseResources
 
 
 class ProductResources(BaseResources):
 
-    def get(self, product_id=None):
-        if product_id is not None:
-            return self.get_by_id(product_id)
+    def get(self, product_code=None):
+        if product_code is not None:
+            return self.get_by_code(product_code)
         elif self.base_path == '/product/prepaid':
             return self.get_all_pre_paid()
         else:
@@ -15,6 +17,8 @@ class ProductResources(BaseResources):
         all_products = (prd for prd in self.all_product if prd.nominal_max == prd.nominal_min)
         if self.category_arg():
             products = (prd for prd in all_products if prd.category.lower() == self.category_arg().lower())
+            if self.subcategory_arg():
+                products = (prd for prd in products if self.subcategory_arg().lower() in prd.sub_category.lower())
         elif self.search_arg():
             products = (prd for prd in all_products if self.search_arg().lower() in prd.name.lower())
         else:
@@ -61,3 +65,14 @@ class ProductResources(BaseResources):
             )
         else:
             self.abort_response(404, f'Product with id: {product_id} not found!')
+
+    def get_by_code(self, code):
+        prd = next((prd for prd in self.all_product if prd.code == code), None)
+        if prd:
+            return self.create_response(
+                message=f'Product with code: {code} found!',
+                status=True,
+                data=prd.to_dict()
+            )
+        else:
+            self.abort_response(404, f'Product with code: {code} not found!')
